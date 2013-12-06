@@ -1,0 +1,240 @@
+﻿@model jiffyOnline.Entity.ItemOrderEntity
+@{
+    Layout = "~/Views/Shared/_ItemLayout.cshtml";
+    if (ViewBag.IsAddwishList != null)
+    {
+        if (ViewBag.IsAddwishList == 1)
+        {
+            <script>alert('เพิ่มสินค้านี้ลงใร Wish list เรียบร้อยแล้ว')</script>
+        }
+        else
+        {
+            <script>alert('คุณมีสินค้านี้ใน Wish list แล้ว')</script>
+        }
+    }
+    int x = 1;
+
+}
+<div id="fb-root"></div>
+
+
+
+
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=391497024299843";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+</script>
+
+
+
+<h2 class="navtitle"><a href="/Item/Categories/@ViewBag.CATEGORY.ID">@ViewBag.CATEGORY.NAME_EN</a> >@ViewBag.ITEMDETAILS.NAME_EN</h2>
+
+
+
+
+
+<!--using (Html.BeginForm("Index", "Item", new { Id = "1" }))-->
+@using (Html.BeginForm("Detail", "Item", new { Id = ViewBag.ID }))
+{
+    @Html.AntiForgeryToken()
+    <div>
+        <section class="itemprodImg">
+
+
+
+
+            <div class="zoom-section">
+                <div class="imgprodtump">
+                    @foreach (var item in ViewBag.ITEMIMGS)
+                    {
+                        <a href='@item.ImageDisplay' class='cloud-zoom-gallery' rel="useZoom: 'zoom1', smallImage: '@item.ImageDisplay' "><img class="zoom-tiny-image" src="@item.ImageDisplay" alt="Thumbnail @x" style="z-index:900" /></a>
+                        x++;
+                    }
+                </div>
+                <div class="zoom-small-image ">
+                    <a href='@ViewBag.ITEMDETAILS.IMAGESDisplay' class='cloud-zoom fancybox-inner' id='zoom1' rel="adjustX:10, adjustY:-4"><img src="@ViewBag.ITEMDETAILS.IMAGESDisplay" alt='' style="width: 310px;" /></a>
+                    <div style="clear:both;"></div>
+
+                </div>
+                <div class="imgzoomtitle">
+                    <a href="javascript:;" class="sizeButton">
+                        View full size image &nbsp;
+                        <img src="~/Content/img/icon/magnification.png" />
+                    </a>
+                </div>
+                <div style="clear:both;"></div>
+            </div><!--zoom-section end-->
+
+            <script type="text/javascript">
+                $('.sizeButton').on('click', function (e) {
+                    e.preventDefault();
+                    activeImgURL = $('.fancybox-inner img').attr('src');
+                    // $('.imgHolder').children("img").attr("src", activeImgURL)
+                    // $('.imgHolder').show();
+                    window.open(activeImgURL);
+                });
+                /* $('.close').click(function () {
+                     $('.imgHolder').hide();
+                 });*/
+            </script>
+
+            <div style="clear:both;"></div>
+            @*<div class="imgHolder">
+                    <img src="" />
+                    <div class="close">X</div>
+                </div>*@
+
+        </section>
+
+        <section class="itemprodDesc">
+            <div class="itemprodDescCtrl">
+                <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                @if (@ViewBag.ITEMDETAILS.NEW_ARRIVAL_FLAG == 1)
+                {
+                    <div class="newarrival"></div>
+                }
+                @if (@ViewBag.ITEMDETAILS.RECOMMEND_FLAG == 1)
+                {
+                    <div class="recommend"></div>
+                }
+
+
+
+            </div>
+
+
+
+            <h1>@ViewBag.ITEMDETAILS.NAME_EN</h1>
+            <h2>@ViewBag.ITEMDETAILS.SHORT_DESCR_EN #@ViewBag.ITEMDETAILS.PRODUCT_SKU</h2>
+            <h3>@ViewBag.ITEMDETAILS.PRICEDISPLAY Baht</h3>
+            <h1 class="productdetail">PRODUCT DETAIL</h1>
+            <p style="min-height:180px;">
+                @ViewBag.ITEMDETAILS.DESCR_EN
+            </p>
+
+            <div class="productdetailoption">
+                <div class="input-group">
+                    Property
+                    @{
+                       if (ViewBag.ITEMPROPERTY != null)
+                        {
+                            List<jiffyOnline.Entity.DropdownEntity> listProperty = (List<jiffyOnline.Entity.DropdownEntity>)ViewBag.ITEMPROPERTY;
+                            @Html.DropDownListFor(m => m.Size,  new SelectList(listProperty), "-- Select --", new { type = "number", @style = "width:100px;", @class = "form-control" })
+                        }
+                    }
+
+                    Amount
+                    @Html.TextBoxFor(m => m.Amount, new  {Type = "number",Value = "1" })
+
+
+                </div>
+            </div>
+            <p style="text-align:center;margin-top:10px;">
+                <div class="form-group" style="margin:0 auto;width:324px;">
+                    <button type="submit" class="btn bag" name="Button" value="Add">ADD TO BAG</button>
+                    @if (Session["Customer"] != null)
+                    {
+                        <button type="submit" class="btn wishlist" name="Button" value="Wishlist">WISH LIST</button>
+                    }
+
+                </div>
+            </p>
+        </section>
+
+        <div style="clear:both;"></div>
+    </div>
+    <section style=" width: 405px; float: left;">
+        <div class="producttab">
+            <ul class="nav nav-tabs product">
+                <li class="active"><a href="#relateproduct" data-toggle="tab" style="padding: 6px;">RELATE PRODUCT</a></li>
+                <li><a href="#recentview" data-toggle="tab" style="padding: 6px;">RECENT VIEW</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="relateproduct">
+                    @foreach (var item in ViewBag.ITEMRELATES)
+                    {
+                        <section class="tabs">
+                            <a href="/Item/Detail/@item.ID">
+                                <img src="@item.IMAGESDisplay" />
+                            </a>
+                            <h1>@item.NAME_EN</h1>
+                            <h2>@item.PRODUCT_SKU</h2>
+                            @if (item.OLD_PRICE != null)
+                            {
+                                <strike style="font-size: 18px; margin-left: 15px;">
+
+                                    @item.OLD_PRICE.ToString("#,##.00") Bath
+                                    <br />
+
+                                </strike>
+                                <h3 class="price" style="font-weight:700;color:#F00;">@item.PRICE.ToString("#,##.00") Bath</h3>
+                            }
+                            else
+                            {
+                                <h3>
+                                    @item.PRICE.ToString("#,##.00") Bath
+                                </h3>
+                            }
+                        </section>
+
+                    }
+
+
+
+
+
+                </div>
+                <div class="tab-pane" id="recentview">
+                    @if (ViewBag.ITEMRECENTVIEW != null)
+                    {
+                        foreach (var item in ViewBag.ITEMRECENTVIEW)
+                        {
+                            <section class="tabs">
+                                <a href="/Item/Detail/@item.ID">
+                                    <img src="@item.IMAGESDisplay" />
+                                </a>
+                                <h1>@item.NAME_EN</h1>
+                                <h2>@item.PRODUCT_SKU</h2>
+                                @if (item.OLD_PRICE != null)
+                                {
+
+                                    <strike style="font-size: 18px; margin-left: 15px;">
+                                        @item.PRICE.ToString("#,##.00") Bath
+                                    </strike>
+
+                                    <h3 class="price" style="font-weight:700;color:#F00;">@item.OLD_PRICE.ToString("#,##.00") Bath</h3>
+                                }
+                                else
+                                {
+                                    <h3 style="font-size: 18px; margin: 6px; top: 18px;">
+                                        @item.PRICE.ToString("#,##.00") Bath
+                                    </h3>
+                                }
+
+
+                            </section>
+
+                        }
+                    }
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<div style="clear:both;"></div>
+<script>
+    $(function () {
+        $('#myTab a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
+    })
+</script>

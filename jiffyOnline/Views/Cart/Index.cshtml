@@ -1,0 +1,133 @@
+﻿@model List<jiffyOnline.Entity.ItemOrderEntity>
+@using jiffyOnline.Models
+@{
+    Layout = "~/Views/Shared/_CartLayout.cshtml";
+    decimal TotalSummary = 0;
+}
+
+
+
+
+@using (Html.BeginForm("Index", "Cart"))
+{
+
+    <h2 class="title">MY SHOPPING BAG</h2>
+    <table class="cart">
+        <tr class="head">
+            <td class="list">รายการ</td>
+            <td> ราคา / บาท</td>
+            <td>จำนวน</td>
+            <td>ส่วนลด</td>
+            <td>ราคาสุทธิ / บาท</td>
+            <td width="120">หยิบออก</td>
+        </tr>
+
+        @if (ViewBag.OrderDetail != null)
+        {
+          
+            int x = 0;
+            foreach (var items in ViewBag.OrderDetail)
+            {
+                decimal ItemSummary = 0;
+                ItemSummary = ItemSummary + (decimal)(items.PRICE * items.Amount);
+                TotalSummary = TotalSummary + ItemSummary;
+                @Html.HiddenFor(m => m[x].ItemId, new { Value = items.ItemId })
+                //   @ViewBag.Summary = (items.Amount * items.PRICE);
+
+                <tr class="items">
+
+                    <td class="head">
+                        <div class="img">
+                            <a href="Item/Detail/@items.ItemId"><img src="@items.IMAGESDisplay" /></a>
+                        </div>
+                        <div class="desc">
+                            <h2>@items.NAME_EN</h2>
+                            <p>@items.SHORT_DESCR_EN</p>
+
+                        </div>
+                        <span class="status">สถานะ: พร้อมจัดส่งภายใน 3-6 วัน </span>
+                    </td>
+                    <td>@items.PRICEDISPLAY</td>
+                    <td>@Html.TextBoxFor(m => m[x].Amount, new { type = "number", Value = Convert.ToInt32(items.Amount),Class="form-control" , Style="width: 80px; text-align: center;border-radius: 0px; " }) </td>
+                    <td>0.00</td>
+
+                    <td>@StringHelpers.FormatDecimal(ItemSummary)</td>
+                    <td><a href="/Cart/RemoveItem/@items.ItemId"><img src="~/Content/img/icon/removeitem.png" /></a></td>
+                </tr>
+                x++;
+            }
+         
+        }
+
+
+        <tr class="summary">
+            <td colspan="3" rowspan="6" style="vertical-align:top; text-align:left;">
+                <h2>กรุณากรอก <font color="#0382c6">Promo Code</font> ของท่าน (ถ้ามี)</h2>
+                <div class="form-group">
+                    <form class="form-inline" role="form">
+                        <input type="text" value="1" class="form-control" style="width: 150px; text-align: center; height: 35px; border-radius: 0px; float:left; " />
+                        <button type="button" class=" btn" style="background: #bee2f8; color: #6098ba; font-family: PSL094pro; font-size: 18px; width: 140px; border-radius: 0px; height: 35px; margin-left:10px; ">CONFIRM</button>
+                    </form>
+                </div>
+            </td>
+            <td>ราคาสินค้าทังหมด</td>
+            <td>@StringHelpers.FormatDecimal(TotalSummary)</td>
+            <td>บาท</td>
+        </tr>
+        <tr class="summary">
+            <td style="color:red;">ส่วนลด</td>
+            <td style="color:red;">0.00</td>
+            <td style="color:red;">บาท</td>
+        </tr>
+        <tr class="summary">
+            <td style="color:red;">ส่วนลดสมาชิก</td>
+            <td style="color:red;">0.00</td>
+            <td style="color:red;">บาท</td>
+        </tr>
+        <tr class="summary">
+            <td>ค่าบริการจัดส่ง</td>
+            <td>0.00</td>
+            <td>บาท</td>
+        </tr>
+        <tr class="summary">
+            <td style="background:#eaeaea;">ราคาสุทธิ</td>
+            <td style="background:#eaeaea;">@StringHelpers.FormatDecimal(TotalSummary)</td>
+            <td style="background:#eaeaea;">บาท</td>
+        </tr>
+        <tr class="summary">
+            <td style=" padding: 0px; background: #bee2f8; border-right: 2px #fff solid; border-top: 2px #fff solid; "><button type="submit" class="btn" name="Button" value="More"  style="background: #bee2f8; color: #6098ba; ">SHOP MORE</button></td>
+            <td style="padding: 0px;  background: #79c5f3; border-right: 2px #fff solid; border-top: 2px #fff solid; "><button type="submit" class="btn" name="Button" value="Update" style="background: #79c5f3; color: white;">UPDATE</button></td>
+            <td style="padding: 0px; background: #48a7e1; border-top: 2px #fff solid; "><button type="button" class="btn" style="background: #48a7e1; color: white;  " onclick="location.href='@Url.Action("Checkout", "Cart", new { id = 0 })'">CHECK OUT</button></td>
+        </tr>
+        <tr class="summary">
+            <td colspan="6"></td>
+        </tr>
+    </table>
+}
+<h2 class="title">PRODUCTS RECOMMEND</h2>
+@foreach (var item in ViewBag.PRODUCTRECOMMEND)
+{
+    <div class="productrecommend">
+        <a href="/Item/Detail/@item.ID">
+            <img src="@item.IMAGES" />
+        </a>
+        <a href="/Item/Detail/@item.ID">
+            <h1>@item.NAME_EN</h1>
+        </a>
+        <p>
+            @item.SHORT_DESCR_EN<br />
+            @if (item.OLD_PRICE != null)
+            {
+                <font><strike>@item.OLD_PRICE.ToString("#,##.00") Bath</strike></font>
+                <br />
+                <font color="#0382c6">
+                    @item.PRICE.ToString("#,##.00") Bath
+                </font>
+            }
+            else
+            {
+                <font color="#0382c6">@item.PRICE.ToString("#,##.00") Bath</font>
+            }
+        </p>
+    </div>
+}

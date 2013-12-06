@@ -1,0 +1,161 @@
+﻿@model jiffyOnline.Entity.ItemOrderEntity
+@{
+    Layout = "~/Views/Shared/_ItemLayout.cshtml";
+}
+
+
+<h2 class="navtitle">CLOTHED > TOPS > BLOUSES</h2>
+<!--using (Html.BeginForm("Index", "Item", new { Id = "1" }))-->
+@using (Html.BeginForm("Index", "Item"))
+{
+    @Html.AntiForgeryToken()
+    <section class="itemprodImg">
+        <ul class="imgprodtump">
+            <li class="active"><a href="#"><img src="~/Content/img/item/sample_item1.png" /></a></li>
+            <li><a href="#"><img src="~/Content/img/item/sample_item1.png" /></a></li>
+            <li><a href="#"><img src="~/Content/img/item/sample_item1.png" /></a></li>
+        </ul>
+        <div class="imgprod">
+            <img src="~/Content/img/item/sample_recommendproduc1.png" />
+        </div>
+        <div style="clear:both;"></div>
+        <div class="imgzoomtitle">
+            View full size image &nbsp;
+            <img src="~/Content/img/icon/magnification.png" />
+        </div>
+    </section>
+    <section class="itemprodDesc">
+        <div class="itemprodDescCtrl">
+
+
+
+            <button class="newarrival" type="button"></button>
+            <button class="recommend" type="button"></button>
+
+        </div>
+
+
+
+        <h1>b+basic</h1>
+        <h2>Blouse # 1306EASL370</h2>
+        <h3>895.00 Baht</h3>
+        <h1 class="productdetail">PRODUCT DETAIL</h1>
+        <p>
+            - Blouse<br />
+            - Sleeveless , mandarin collar<br />
+            - Front button placket<br />
+            - Fabric : 100% Cotton<br />
+            - 3 available color : Violet,Green,Orange<br />
+            - Soft and comfortable to wear<br /><br />
+            The company reserves the right to not accept returns on sale items.<br />
+        </p>
+
+        <div class="productdetailoption">
+            <div class="input-group">
+                Color
+                @{
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    listItems.Add(new SelectListItem
+         {
+             Text = "Red",
+             Value = "1"
+         });
+                }
+
+                @Html.DropDownListFor(model => model.Color, listItems, "-- Select --", new { type = "number", @style = "width:100px;", @class = "form-control" })
+                &nbsp;
+
+                @{
+    listItems = new List<SelectListItem>();
+    listItems.Add(new SelectListItem
+         {
+             Text = "S",
+             Value = "1",
+              Selected = true
+         });
+    listItems.Add(new SelectListItem
+         {
+             Text = "L",
+             Value = "2",
+         });
+    listItems.Add(new SelectListItem
+         {
+             Text = "XL",
+             Value = "3"
+         });
+                }
+
+                @Html.DropDownListFor(model => model.Size, listItems, "-- Select --", new { type = "number", @style = "width:100px;", @class = "form-control" })
+                &nbsp;<a href="#" style="color: #f48f16; text-decoration:underline;">Size chart</a>
+                &nbsp;&nbsp;Amount
+                @Html.TextBoxFor(m => m.Amount, new { type = "number", @style = "width:100px", @class = "form-control" })
+            </div>
+        </div>
+        <p style="text-align:center;margin-top:10px;">
+            <button class="btn bag" name="Button" value="Add">ADD TO BAG</button>
+            <button class="btn wishlist" name="Button" value="Wishlist">WISH LIST</button>
+        </p>
+    </section>
+    <div class="producttab">
+        <ul class="nav nav-tabs product">
+            <li class="active"><a href="#relateproduct" data-toggle="tab" style="padding: 6px;">RELATE PRODUCT</a></li>
+            <li><a href="#recentview" data-toggle="tab" style="padding: 6px;">RECENT VIEW</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="relateproduct">
+                <section class="tabs">
+                    <img src="~/Content/img/item/sample_recommendproduc1.png" />
+                    <h1>EASY PIECES</h1>
+                    <h2>Shirt # 1309HLS025</h2>
+                    <h3>1,490.00 BATH</h3>
+                </section>
+                <section class="tabs">
+
+                    <img src="~/Content/img/item/sample_item3.png" />
+                    <h1>b+basic</h1>
+                    <h2>Blouse # 1306EASL370</h2>
+                    <h3>895.00 Baht</h3>
+                </section>
+                <section class="tabs last">
+
+                    <img src="~/Content/img/item/sample_item2.png" />
+                    <h1>b+basic</h1>
+                    <h2>Blouse # 1306EASL370</h2>
+                    <h3>895.00 Baht</h3>
+                </section>
+            </div>
+            <div class="tab-pane" id="recentview">
+
+                <section class="tabs">
+                    <img src="~/Content/img/item/sample_recommendproduc1.png" />
+                    <h1>EASY PIECES</h1>
+                    <h2>Shirt # 1309HLS025</h2>
+                    <h3>1,490.00 BATH</h3>
+                </section>
+                <section class="tabs">
+
+                    <img src="~/Content/img/item/sample_item3.png" />
+                    <h1>b+basic</h1>
+                    <h2>Blouse # 1306EASL370</h2>
+                    <h3>895.00 Baht</h3>
+                </section>
+                <section class="tabs last">
+
+                    <img src="~/Content/img/item/sample_item2.png" />
+                    <h1>b+basic</h1>
+                    <h2>Blouse # 1306EASL370</h2>
+                    <h3>895.00 Baht</h3>
+                </section>
+            </div>
+        </div>
+    </div>
+}
+<div style="clear:both;"></div>
+<script>
+    $(function () {
+        $('#myTab a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
+    })
+</script>

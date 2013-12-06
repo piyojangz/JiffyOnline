@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/Views/Shared/_CategoryLayout.cshtml";
+}
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<jiffyOnline.Entity.ProductsEntity>
+
+<div style="padding: 10px 5px 70px 2px; float: right; width: 785px;">
+    <div style="width:100%;height:50px;">
+        <select id="Select1">
+            <option>Sort for All</option>
+            <option>Newest</option>
+            <option>Name(a-z)</option>
+            <option>Name(z-a)</option>
+            <option>Price(high-low)</option>
+            <option>Price(low-high)</option>
+        </select>
+    </div>
+
+
+
+    @foreach (var item in Model)
+    {
+        <div class="productbox">
+            <a href="/Item/Detail/@item.ID">
+                <img src="@item.IMAGESDisplay" width="170" />
+            </a>
+            <a href="/Item/Detail/@item.ID">
+                <h1>@item.NAME_EN</h1>
+            </a>
+            <p>@item.SHORT_DESCR_EN</p>
+            @if (item.OLD_PRICE.Value != null)
+            {
+                <p class="price"><strike>@item.PRICE.ToString("#,##.00") Bath</strike></p>
+                <p class="price" style="font-weight:700;color:#F00;">@item.OLD_PRICE.Value.ToString("#,##.00") Bath</p>
+            }
+            else
+            {
+                <p class="price">@item.PRICE.ToString("#,##.00") Bath</p>
+            }
+
+        </div>
+
+    }
+
+    <hr class="cate" />
+    <div class="pagedList" style="position:absolute; bottom:0">
+        @Html.PagedListPager(Model, page => Url.Action("Categories", "Item", new { page }), PagedListRenderOptions.MinimalWithPageCountText)
+    </div>
+
+</div>

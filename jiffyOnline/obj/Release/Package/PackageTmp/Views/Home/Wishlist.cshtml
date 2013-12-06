@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "~/Views/Shared/_ProfileLayout.cshtml";
+}
+<div id="fb-root"></div>
+<script>
+(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=599156356796723";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="wishlist">
+    <table class="cart" style="width: 785px;margin-top:0px;">
+        <tr class="head">
+            <td style="width:200px;">รายการ</td>
+            <td> ราคา / บาท</td>
+            <td>จำนวน</td>
+            <td></td>
+            <td></td>
+            <td width="120"></td>
+        </tr>
+
+        @if (ViewBag.Wisjlist != null)
+        {
+            decimal ItemSummary = 0;
+
+            foreach (var item in ViewBag.Wisjlist)
+            {
+                <tr class="items">
+
+                    <td class="head">
+                        <div class="img">
+                            <a href="Item/Detail/@item.ID"><img src="@item.IMAGESDisplay" /></a>
+                        </div>
+                        <div class="desc">
+                            <h2>@item.NAME_EN</h2>
+                            <p>@item.SHORT_DESCR_EN</p>
+
+                        </div>
+                        <span class="status">สถานะ: พร้อมจัดส่งภายใน 3-6 วัน </span>
+                    </td>
+                    <td>
+                        @if (item.OLD_PRICE != null)
+                        {
+                            <p class="price"><strike>@item.OLD_PRICE.ToString("#,##.00") Bath</strike></p>
+                            <p class="price" style="color: #F00; font-size: 17px;">@item.PRICE.ToString("#,##.00") Bath</p>
+                        }
+                        else
+                        {
+                            <p class="price">@item.PRICE.ToString("#,##.00") Bath</p>
+                        }
+                    </td>
+                    <td style="vertical-align: middle;"><input type="number" value="1" class="form-control" style="width: 80px; text-align: center;border-radius: 0px; " /></td>
+                    <td style="vertical-align: middle;">
+                        <button type="submit" class="btn bag" name="Button" value="Add" style="font-size: 16px;
+font-weight: 100;
+background-position: 5px;">
+                            ADD TO BAG
+                        </button>
+                    </td>
+                    <td style="vertical-align: middle;"><div class="fb-share-button" data-href="http://developers.facebook.com/docs/plugins/" data-type="button"></div></td>
+                    <td style="vertical-align: middle;"><a href="/Cart/RemoveItem/@item.ID"><img src="~/Content/img/icon/removeitem.png" /></a></td>
+                </tr>
+            }
+        }
+
+
+    </table>
+
+
+
+</div>

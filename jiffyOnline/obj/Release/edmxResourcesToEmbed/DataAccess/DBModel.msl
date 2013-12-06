@@ -1,0 +1,824 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JIFFYModelStoreContainer" CdmEntityContainer="JIFFY_DBEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="JIFFYModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_AMPHUR">
+      <EntityTypeMapping TypeName="JIFFYModel.T_AMPHUR">
+        <MappingFragment StoreEntitySet="T_AMPHUR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="NAME_TH" ColumnName="NAME_TH" />
+          <ScalarProperty Name="GEO_ID" ColumnName="GEO_ID" />
+          <ScalarProperty Name="PROVINCE_ID" ColumnName="PROVINCE_ID" />
+          <ScalarProperty Name="NAME_EN" ColumnName="NAME_EN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_AMPHUR_POSTCODE">
+      <EntityTypeMapping TypeName="JIFFYModel.T_AMPHUR_POSTCODE">
+        <MappingFragment StoreEntitySet="T_AMPHUR_POSTCODE">
+          <ScalarProperty Name="AMPHUR_ID" ColumnName="AMPHUR_ID" />
+          <ScalarProperty Name="POST_CODE" ColumnName="POST_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_BANNER">
+      <EntityTypeMapping TypeName="JIFFYModel.T_BANNER">
+        <MappingFragment StoreEntitySet="T_BANNER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BANNER_NAME" ColumnName="BANNER_NAME" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="POSITION" ColumnName="POSITION" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="BANNER_TYPE" ColumnName="BANNER_TYPE" />
+          <ScalarProperty Name="REF_ID" ColumnName="REF_ID" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_BRAND">
+      <EntityTypeMapping TypeName="JIFFYModel.T_BRAND">
+        <MappingFragment StoreEntitySet="T_BRAND">
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME_TH" ColumnName="NAME_TH" />
+          <ScalarProperty Name="NAME_EN" ColumnName="NAME_EN" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_CATEGORIES">
+      <EntityTypeMapping TypeName="JIFFYModel.T_CATEGORIES">
+        <MappingFragment StoreEntitySet="T_CATEGORIES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME_TH" ColumnName="NAME_TH" />
+          <ScalarProperty Name="NAME_EN" ColumnName="NAME_EN" />
+          <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+          <ScalarProperty Name="DESCR_TH" ColumnName="DESCR_TH" />
+          <ScalarProperty Name="DESCR_EN" ColumnName="DESCR_EN" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_CATEGORIES_ATT">
+      <EntityTypeMapping TypeName="JIFFYModel.T_CATEGORIES_ATT">
+        <MappingFragment StoreEntitySet="T_CATEGORIES_ATT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CATEGORIES_ID" ColumnName="CATEGORIES_ID" />
+          <ScalarProperty Name="NAME_TH" ColumnName="NAME_TH" />
+          <ScalarProperty Name="NAME_EN" ColumnName="NAME_EN" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_CONTENT">
+      <EntityTypeMapping TypeName="JIFFYModel.T_CONTENT">
+        <MappingFragment StoreEntitySet="T_CONTENT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="HTML_TEXT" ColumnName="HTML_TEXT" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_CUSTOMER">
+      <EntityTypeMapping TypeName="JIFFYModel.T_CUSTOMER">
+        <MappingFragment StoreEntitySet="T_CUSTOMER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CUSTOMER_GROUP" ColumnName="CUSTOMER_GROUP" />
+          <ScalarProperty Name="FNAME" ColumnName="FNAME" />
+          <ScalarProperty Name="LNAME" ColumnName="LNAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DATE_OF_BIRTH" ColumnName="DATE_OF_BIRTH" />
+          <ScalarProperty Name="SEND_NEWS" ColumnName="SEND_NEWS" />
+          <ScalarProperty Name="AUTH_USER" ColumnName="AUTH_USER" />
+          <ScalarProperty Name="AUTH_PASS" ColumnName="AUTH_PASS" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="COMPANYNAME" ColumnName="COMPANYNAME" />
+          <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
+          <ScalarProperty Name="ADDRESS2" ColumnName="ADDRESS2" />
+          <ScalarProperty Name="ADDRESS3" ColumnName="ADDRESS3" />
+          <ScalarProperty Name="ADDRESS4" ColumnName="ADDRESS4" />
+          <ScalarProperty Name="PROVINCE_ID" ColumnName="PROVINCE_ID" />
+          <ScalarProperty Name="DISTRICT_ID" ColumnName="DISTRICT_ID" />
+          <ScalarProperty Name="AMPHUR_ID" ColumnName="AMPHUR_ID" />
+          <ScalarProperty Name="POSTCODE" ColumnName="POSTCODE" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="POINT" ColumnName="POINT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_CUSTOMER_GROUP">
+      <EntityTypeMapping TypeName="JIFFYModel.T_CUSTOMER_GROUP">
+        <MappingFragment StoreEntitySet="T_CUSTOMER_GROUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME_EN" ColumnName="NAME_EN" />
+          <ScalarProperty Name="NAME_TH" ColumnName="NAME_TH" />
+          <ScalarProperty Name="TOTAL_AMOUNT" ColumnName="TOTAL_AMOUNT" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_DISTRICT">
+      <EntityTypeMapping TypeName="JIFFYModel.T_DISTRICT">
+        <MappingFragment StoreEntitySet="T_DISTRICT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="NAME_TH" ColumnName="NAME_TH" />
+          <ScalarProperty Name="AMPHUR_ID" ColumnName="AMPHUR_ID" />
+          <ScalarProperty Name="PROVINCE_ID" ColumnName="PROVINCE_ID" />
+          <ScalarProperty Name="GEO_ID" ColumnName="GEO_ID" />
+          <ScalarProperty Name="NAME_EN" ColumnName="NAME_EN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_IMAGE">
+      <EntityTypeMapping TypeName="JIFFYModel.T_IMAGE">
+        <MappingFragment StoreEntitySet="T_IMAGE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="REF_ID" ColumnName="REF_ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="IMG" ColumnName="IMG" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+          <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_ORDER">
+      <EntityTypeMapping TypeName="JIFFYModel.T_ORDER">
+        <MappingFragment StoreEntitySet="T_ORDER">
+          <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+          <ScalarProperty Name="SHIPPINGMETHOD" ColumnName="SHIPPINGMETHOD" />
+          <ScalarProperty Name="PAYMENTTYPE" ColumnName="PAYMENTTYPE" />
+          <ScalarProperty Name="ORDERSTATUS" ColumnName="ORDERSTATUS" />
+          <ScalarProperty Name="SHIPPINGCOST" ColumnName="SHIPPINGCOST" />
+          <ScalarProperty Name="ORDERDISCOUNT" ColumnName="ORDERDISCOUNT" />
+          <ScalarProperty Name="CUSTOMERIP" ColumnName="CUSTOMERIP" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="ORDERDATE" ColumnName="ORDERDATE" />
+          <ScalarProperty Name="PAYMENTDATE" ColumnName="PAYMENTDATE" />
+          <ScalarProperty Name="CUSTOMERCOMMENT" ColumnName="CUSTOMERCOMMENT" />
+          <ScalarProperty Name="SHIPPINGNAME" ColumnName="SHIPPINGNAME" />
+          <ScalarProperty Name="SHIPPINGPROVINCE" ColumnName="SHIPPINGPROVINCE" />
+          <ScalarProperty Name="SHIPPINGAMPHUR" ColumnName="SHIPPINGAMPHUR" />
+          <ScalarProperty Name="SHIPPINGDISTRICT" ColumnName="SHIPPINGDISTRICT" />
+          <ScalarProperty Name="SHIPPINGPOSTCODE" ColumnName="SHIPPINGPOSTCODE" />
+          <ScalarProperty Name="SHIPPINGADDRESS1" ColumnName="SHIPPINGADDRESS1" />
+          <ScalarProperty Name="SHIPPINGEMAIL" ColumnName="SHIPPINGEMAIL" />
+          <ScalarProperty Name="SHIPPINGTEL" ColumnName="SHIPPINGTEL" />
+          <ScalarProperty Name="SHIPPINGFAX" ColumnName="SHIPPINGFAX" />
+          <ScalarProperty Name="BILLINGNAME" ColumnName="BILLINGNAME" />
+          <ScalarProperty Name="BILLINGPROVINCE" ColumnName="BILLINGPROVINCE" />
+          <ScalarProperty Name="BILLINGAMPHUR" ColumnName="BILLINGAMPHUR" />
+          <ScalarProperty Name="BILLINGDISTRICT" ColumnName="BILLINGDISTRICT" />
+          <ScalarProperty Name="BILLINGPOSTCODE" ColumnName="BILLINGPOSTCODE" />
+          <ScalarProperty Name="BILLINGADDRESS1" ColumnName="BILLINGADDRESS1" />
+          <ScalarProperty Name="BILLINGEMAIL" ColumnName="BILLINGEMAIL" />
+          <ScalarProperty Name="BILLINGTEL" ColumnName="BILLINGTEL" />
+          <ScalarProperty Name="BILLINGFAX" ColumnName="BILLINGFAX" />
+          <ScalarProperty Name="PAYMENTNUMBER" ColumnName="PAYMENTNUMBER" />
+          <ScalarProperty Name="SHIPPINGADDRESS2" ColumnName="SHIPPINGADDRESS2" />
+          <ScalarProperty Name="SHIPPINGADDRESS3" ColumnName="SHIPPINGADDRESS3" />
+          <ScalarProperty Name="SHIPPINGADDRESS4" ColumnName="SHIPPINGADDRESS4" />
+          <ScalarProperty Name="SHIPPINGMOBILE" ColumnName="SHIPPINGMOBILE" />
+          <ScalarProperty Name="BILLINGADDRESS2" ColumnName="BILLINGADDRESS2" />
+          <ScalarProperty Name="BILLINGADDRESS3" ColumnName="BILLINGADDRESS3" />
+          <ScalarProperty Name="BILLINGADDRESS4" ColumnName="BILLINGADDRESS4" />
+          <ScalarProperty Name="CUSTOMERNAME" ColumnName="CUSTOMERNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_ORDERCART">
+      <EntityTypeMapping TypeName="JIFFYModel.T_ORDERCART">
+        <MappingFragment StoreEntitySet="T_ORDERCART">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="COST" ColumnName="COST" />
+          <ScalarProperty Name="OLD_PRICE" ColumnName="OLD_PRICE" />
+          <ScalarProperty Name="PROMOTION_ID" ColumnName="PROMOTION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PRODUCT_RELATION">
+      <EntityTypeMapping TypeName="JIFFYModel.T_PRODUCT_RELATION">
+        <MappingFragment StoreEntitySet="T_PRODUCT_RELATION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="RELATE_PRODUCT_ID" ColumnName="RELATE_PRODUCT_ID" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PRODUCT_TIER_PRICE">
+      <EntityTypeMapping TypeName="JIFFYModel.T_PRODUCT_TIER_PRICE">
+        <MappingFragment StoreEntitySet="T_PRODUCT_TIER_PRICE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PRODUCT_SKU" ColumnName="PRODUCT_SKU" />
+          <ScalarProperty Name="CUSTOMER_GROUP" ColumnName="CUSTOMER_GROUP" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="QTY" ColumnName="QTY" />
+          <ScalarProperty Name="IS_ABOVE" ColumnName="IS_ABOVE" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PRODUCTS">
+      <EntityTypeMapping TypeName="JIFFYModel.T_PRODUCTS">
+        <MappingFragment StoreEntitySet="T_PRODUCTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME_TH" ColumnName="NAME_TH" />
+          <ScalarProperty Name="NAME_EN" ColumnName="NAME_EN" />
+          <ScalarProperty Name="DESCR_TH" ColumnName="DESCR_TH" />
+          <ScalarProperty Name="DESCR_EN" ColumnName="DESCR_EN" />
+          <ScalarProperty Name="CATEGORIES_ID" ColumnName="CATEGORIES_ID" />
+          <ScalarProperty Name="PRODUCT_SKU" ColumnName="PRODUCT_SKU" />
+          <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
+          <ScalarProperty Name="COST" ColumnName="COST" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+          <ScalarProperty Name="SHORT_DESCR_TH" ColumnName="SHORT_DESCR_TH" />
+          <ScalarProperty Name="SHORT_DESCR_EN" ColumnName="SHORT_DESCR_EN" />
+          <ScalarProperty Name="OLD_PRICE" ColumnName="OLD_PRICE" />
+          <ScalarProperty Name="BUY_FLAG" ColumnName="BUY_FLAG" />
+          <ScalarProperty Name="WISH_LIST" ColumnName="WISH_LIST" />
+          <ScalarProperty Name="CALL_PRICE_FLAG" ColumnName="CALL_PRICE_FLAG" />
+          <ScalarProperty Name="SHIPPING_FLAG" ColumnName="SHIPPING_FLAG" />
+          <ScalarProperty Name="SHIPPING_CHARGE" ColumnName="SHIPPING_CHARGE" />
+          <ScalarProperty Name="TAX_VALUE" ColumnName="TAX_VALUE" />
+          <ScalarProperty Name="TAX_TYPE" ColumnName="TAX_TYPE" />
+          <ScalarProperty Name="MIN_QTY" ColumnName="MIN_QTY" />
+          <ScalarProperty Name="MAX_QTY" ColumnName="MAX_QTY" />
+          <ScalarProperty Name="STOCK_QTY" ColumnName="STOCK_QTY" />
+          <ScalarProperty Name="DISPLAY_QTY_FLAG" ColumnName="DISPLAY_QTY_FLAG" />
+          <ScalarProperty Name="MIN_STOCK_QTY" ColumnName="MIN_STOCK_QTY" />
+          <ScalarProperty Name="NEW_ARRIVAL_FLAG" ColumnName="NEW_ARRIVAL_FLAG" />
+          <ScalarProperty Name="BRAND_ID" ColumnName="BRAND_ID" />
+          <ScalarProperty Name="RECOMMEND_FLAG" ColumnName="RECOMMEND_FLAG" />
+          <ScalarProperty Name="WEIGTH" ColumnName="WEIGTH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PRODUCTS_ATT">
+      <EntityTypeMapping TypeName="JIFFYModel.T_PRODUCTS_ATT">
+        <MappingFragment StoreEntitySet="T_PRODUCTS_ATT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="CATEGORIES_ATT_ID" ColumnName="CATEGORIES_ATT_ID" />
+          <ScalarProperty Name="DESCR_TH" ColumnName="DESCR_TH" />
+          <ScalarProperty Name="DESCR_EN" ColumnName="DESCR_EN" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PROGRAM">
+      <EntityTypeMapping TypeName="JIFFYModel.T_PROGRAM">
+        <MappingFragment StoreEntitySet="T_PROGRAM">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESC" ColumnName="DESC" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PROMOTION">
+      <EntityTypeMapping TypeName="JIFFYModel.T_PROMOTION">
+        <MappingFragment StoreEntitySet="T_PROMOTION">
+          <ScalarProperty Name="PROMOTION_TYPE" ColumnName="PROMOTION_TYPE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PROMO_NAME_TH" ColumnName="PROMO_NAME_TH" />
+          <ScalarProperty Name="PROMO_DESC_TH" ColumnName="PROMO_DESC_TH" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="CUSTOMER_GROUP" ColumnName="CUSTOMER_GROUP" />
+          <ScalarProperty Name="COUPON" ColumnName="COUPON" />
+          <ScalarProperty Name="COUPON_CODE" ColumnName="COUPON_CODE" />
+          <ScalarProperty Name="USER_PER_COUPON" ColumnName="USER_PER_COUPON" />
+          <ScalarProperty Name="USER_PER_CUSTOMER" ColumnName="USER_PER_CUSTOMER" />
+          <ScalarProperty Name="FROM_DATE" ColumnName="FROM_DATE" />
+          <ScalarProperty Name="TO_DATE" ColumnName="TO_DATE" />
+          <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+          <ScalarProperty Name="PUBLIC_IN_RSS_FEED" ColumnName="PUBLIC_IN_RSS_FEED" />
+          <ScalarProperty Name="APPLY" ColumnName="APPLY" />
+          <ScalarProperty Name="DISCOUNT_AMOUNT" ColumnName="DISCOUNT_AMOUNT" />
+          <ScalarProperty Name="MAX_QTY_DISCOUNT_IS_APPLIED_TO" ColumnName="MAX_QTY_DISCOUNT_IS_APPLIED_TO" />
+          <ScalarProperty Name="DISCOUNT_QTY_STEP" ColumnName="DISCOUNT_QTY_STEP" />
+          <ScalarProperty Name="APPLY_TO_SHIPPING_AMOUNT" ColumnName="APPLY_TO_SHIPPING_AMOUNT" />
+          <ScalarProperty Name="FREE_SHIPPING" ColumnName="FREE_SHIPPING" />
+          <ScalarProperty Name="MAX_QTY_PER_EACH" ColumnName="MAX_QTY_PER_EACH" />
+          <ScalarProperty Name="PROMO_START_TIME" ColumnName="PROMO_START_TIME" />
+          <ScalarProperty Name="PROMO_END_TIME" ColumnName="PROMO_END_TIME" />
+          <ScalarProperty Name="USE_COUNT" ColumnName="USE_COUNT" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+          <ScalarProperty Name="PROMO_NAME_EN" ColumnName="PROMO_NAME_EN" />
+          <ScalarProperty Name="PROMO_DESC_EN" ColumnName="PROMO_DESC_EN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PROMOTION_CONDITION">
+      <EntityTypeMapping TypeName="JIFFYModel.T_PROMOTION_CONDITION">
+        <MappingFragment StoreEntitySet="T_PROMOTION_CONDITION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PROMOTION_ID" ColumnName="PROMOTION_ID" />
+          <ScalarProperty Name="CONDITION_TYPE" ColumnName="CONDITION_TYPE" />
+          <ScalarProperty Name="REF_ID" ColumnName="REF_ID" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PROVINCE">
+      <EntityTypeMapping TypeName="JIFFYModel.T_PROVINCE">
+        <MappingFragment StoreEntitySet="T_PROVINCE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="NAME_TH" ColumnName="NAME_TH" />
+          <ScalarProperty Name="GEO_ID" ColumnName="GEO_ID" />
+          <ScalarProperty Name="NAME_EN" ColumnName="NAME_EN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_ROLE">
+      <EntityTypeMapping TypeName="JIFFYModel.T_ROLE">
+        <MappingFragment StoreEntitySet="T_ROLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_SHIPPINGMETHOD">
+      <EntityTypeMapping TypeName="JIFFYModel.T_SHIPPINGMETHOD">
+        <MappingFragment StoreEntitySet="T_SHIPPINGMETHOD">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_STORE">
+      <EntityTypeMapping TypeName="JIFFYModel.T_STORE">
+        <MappingFragment StoreEntitySet="T_STORE">
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME_TH" ColumnName="NAME_TH" />
+          <ScalarProperty Name="NAME_EN" ColumnName="NAME_EN" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+          <ScalarProperty Name="LOCATION_TH" ColumnName="LOCATION_TH" />
+          <ScalarProperty Name="LOCATION_EN" ColumnName="LOCATION_EN" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_USERS">
+      <EntityTypeMapping TypeName="JIFFYModel.T_USERS">
+        <MappingFragment StoreEntitySet="T_USERS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FNAME_TH" ColumnName="FNAME_TH" />
+          <ScalarProperty Name="FNAME_EN" ColumnName="FNAME_EN" />
+          <ScalarProperty Name="LNAME_TH" ColumnName="LNAME_TH" />
+          <ScalarProperty Name="LNAME_EN" ColumnName="LNAME_EN" />
+          <ScalarProperty Name="AUTH_USER" ColumnName="AUTH_USER" />
+          <ScalarProperty Name="AUTH_PASS" ColumnName="AUTH_PASS" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_VENDOR">
+      <EntityTypeMapping TypeName="JIFFYModel.T_VENDOR">
+        <MappingFragment StoreEntitySet="T_VENDOR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME_TH" ColumnName="NAME_TH" />
+          <ScalarProperty Name="NAME_EN" ColumnName="NAME_EN" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="CONTACT_NAME" ColumnName="CONTACT_NAME" />
+          <ScalarProperty Name="CONTACT_EMAIL" ColumnName="CONTACT_EMAIL" />
+          <ScalarProperty Name="CONTACT_ADDRESS" ColumnName="CONTACT_ADDRESS" />
+          <ScalarProperty Name="CONTACT_TEL" ColumnName="CONTACT_TEL" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_WISHLIST">
+      <EntityTypeMapping TypeName="JIFFYModel.T_WISHLIST">
+        <MappingFragment StoreEntitySet="T_WISHLIST">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="COST" ColumnName="COST" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="OLD_PRICE" ColumnName="OLD_PRICE" />
+          <ScalarProperty Name="PROMOTION_ID" ColumnName="PROMOTION_ID" />
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+          <ScalarProperty Name="ORDERDATE" ColumnName="ORDERDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_LOOKUP">
+      <EntityTypeMapping TypeName="JIFFYModel.T_LOOKUP">
+        <MappingFragment StoreEntitySet="T_LOOKUP">
+          <ScalarProperty Name="LOOKUP_TYPE" ColumnName="LOOKUP_TYPE" />
+          <ScalarProperty Name="LOOKUP_CODE" ColumnName="LOOKUP_CODE" />
+          <ScalarProperty Name="MEANING" ColumnName="MEANING" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_ONHAND">
+      <EntityTypeMapping TypeName="JIFFYModel.T_ONHAND">
+        <MappingFragment StoreEntitySet="T_ONHAND">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="LOT" ColumnName="LOT" />
+          <ScalarProperty Name="SN" ColumnName="SN" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+          <ScalarProperty Name="COST" ColumnName="COST" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_ROLE_D">
+      <EntityTypeMapping TypeName="JIFFYModel.T_ROLE_D">
+        <MappingFragment StoreEntitySet="T_ROLE_D">
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="PROGRAM_ID" ColumnName="PROGRAM_ID" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PROMOTION_EXCLUDE">
+      <EntityTypeMapping TypeName="JIFFYModel.T_PROMOTION_EXCLUDE">
+        <MappingFragment StoreEntitySet="T_PROMOTION_EXCLUDE">
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="REF_ID" ColumnName="REF_ID" />
+          <ScalarProperty Name="CONDITION_TYPE" ColumnName="CONDITION_TYPE" />
+          <ScalarProperty Name="PROMOTION_ID" ColumnName="PROMOTION_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_BANNER">
+      <EntityTypeMapping TypeName="JIFFYModel.V_BANNER">
+        <MappingFragment StoreEntitySet="V_BANNER">
+          <ScalarProperty Name="IMG" ColumnName="IMG" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="REF_ID" ColumnName="REF_ID" />
+          <ScalarProperty Name="BANNER_TYPE" ColumnName="BANNER_TYPE" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="POSITION" ColumnName="POSITION" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="BANNER_NAME" ColumnName="BANNER_NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_CONTENT_TYPE">
+      <EntityTypeMapping TypeName="JIFFYModel.V_CONTENT_TYPE">
+        <MappingFragment StoreEntitySet="V_CONTENT_TYPE">
+          <ScalarProperty Name="HTML_TEXT" ColumnName="HTML_TEXT" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MEANING" ColumnName="MEANING" />
+          <ScalarProperty Name="LOOKUP_CODE" ColumnName="LOOKUP_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_PRODUCT_CATAGORIES">
+      <EntityTypeMapping TypeName="JIFFYModel.V_PRODUCT_CATAGORIES">
+        <MappingFragment StoreEntitySet="V_PRODUCT_CATAGORIES">
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="P_NAME_TH" ColumnName="P_NAME_TH" />
+          <ScalarProperty Name="P_NAME_EN" ColumnName="P_NAME_EN" />
+          <ScalarProperty Name="NAME_TH" ColumnName="NAME_TH" />
+          <ScalarProperty Name="NAME_EN" ColumnName="NAME_EN" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="P_ID" ColumnName="P_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_PRODUCT_RELATION">
+      <EntityTypeMapping TypeName="JIFFYModel.V_PRODUCT_RELATION">
+        <MappingFragment StoreEntitySet="V_PRODUCT_RELATION">
+          <ScalarProperty Name="SHORT_DESCR_EN" ColumnName="SHORT_DESCR_EN" />
+          <ScalarProperty Name="NAME_EN" ColumnName="NAME_EN" />
+          <ScalarProperty Name="PRODUCT_SKU" ColumnName="PRODUCT_SKU" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="RELATE_PRODUCT_ID" ColumnName="RELATE_PRODUCT_ID" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_PRODUCTS">
+      <EntityTypeMapping TypeName="JIFFYModel.V_PRODUCTS">
+        <MappingFragment StoreEntitySet="V_PRODUCTS">
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="WEIGTH" ColumnName="WEIGTH" />
+          <ScalarProperty Name="RECOMMEND_FLAG" ColumnName="RECOMMEND_FLAG" />
+          <ScalarProperty Name="NEW_ARRIVAL_FLAG" ColumnName="NEW_ARRIVAL_FLAG" />
+          <ScalarProperty Name="MIN_STOCK_QTY" ColumnName="MIN_STOCK_QTY" />
+          <ScalarProperty Name="DISPLAY_QTY_FLAG" ColumnName="DISPLAY_QTY_FLAG" />
+          <ScalarProperty Name="STOCK_QTY" ColumnName="STOCK_QTY" />
+          <ScalarProperty Name="MAX_QTY" ColumnName="MAX_QTY" />
+          <ScalarProperty Name="MIN_QTY" ColumnName="MIN_QTY" />
+          <ScalarProperty Name="TAX_TYPE" ColumnName="TAX_TYPE" />
+          <ScalarProperty Name="TAX_VALUE" ColumnName="TAX_VALUE" />
+          <ScalarProperty Name="SHIPPING_CHARGE" ColumnName="SHIPPING_CHARGE" />
+          <ScalarProperty Name="SHIPPING_FLAG" ColumnName="SHIPPING_FLAG" />
+          <ScalarProperty Name="CALL_PRICE_FLAG" ColumnName="CALL_PRICE_FLAG" />
+          <ScalarProperty Name="WISH_LIST" ColumnName="WISH_LIST" />
+          <ScalarProperty Name="BUY_FLAG" ColumnName="BUY_FLAG" />
+          <ScalarProperty Name="ONHAND" ColumnName="ONHAND" />
+          <ScalarProperty Name="BRAND_EN" ColumnName="BRAND_EN" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="OLD_PRICE" ColumnName="OLD_PRICE" />
+          <ScalarProperty Name="COST" ColumnName="COST" />
+          <ScalarProperty Name="VENDOR_EN" ColumnName="VENDOR_EN" />
+          <ScalarProperty Name="PRODUCT_SKU" ColumnName="PRODUCT_SKU" />
+          <ScalarProperty Name="CATEGORY_EN" ColumnName="CATEGORY_EN" />
+          <ScalarProperty Name="BRAND_ID" ColumnName="BRAND_ID" />
+          <ScalarProperty Name="CATEGORIES_ID" ColumnName="CATEGORIES_ID" />
+          <ScalarProperty Name="DESCR_EN" ColumnName="DESCR_EN" />
+          <ScalarProperty Name="DESCR_TH" ColumnName="DESCR_TH" />
+          <ScalarProperty Name="NAME_EN" ColumnName="NAME_EN" />
+          <ScalarProperty Name="NAME_TH" ColumnName="NAME_TH" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_PROMOTION_COND">
+      <EntityTypeMapping TypeName="JIFFYModel.V_PROMOTION_COND">
+        <MappingFragment StoreEntitySet="V_PROMOTION_COND">
+          <ScalarProperty Name="CONDITION_TYPE_NAME" ColumnName="CONDITION_TYPE_NAME" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="REF_ID" ColumnName="REF_ID" />
+          <ScalarProperty Name="CONDITION_TYPE" ColumnName="CONDITION_TYPE" />
+          <ScalarProperty Name="PROMOTION_ID" ColumnName="PROMOTION_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_PROMOTION_EXCLUDE">
+      <EntityTypeMapping TypeName="JIFFYModel.V_PROMOTION_EXCLUDE">
+        <MappingFragment StoreEntitySet="V_PROMOTION_EXCLUDE">
+          <ScalarProperty Name="CONDITION_TYPE_NAME" ColumnName="CONDITION_TYPE_NAME" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DELETE_BY" ColumnName="DELETE_BY" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="REF_ID" ColumnName="REF_ID" />
+          <ScalarProperty Name="CONDITION_TYPE" ColumnName="CONDITION_TYPE" />
+          <ScalarProperty Name="PROMOTION_ID" ColumnName="PROMOTION_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ROLE_PROGRAM">
+      <EntityTypeMapping TypeName="JIFFYModel.V_ROLE_PROGRAM">
+        <MappingFragment StoreEntitySet="V_ROLE_PROGRAM">
+          <ScalarProperty Name="PRIVILEGE" ColumnName="PRIVILEGE" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESC" ColumnName="DESC" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_USER_ROLES">
+      <EntityTypeMapping TypeName="JIFFYModel.V_USER_ROLES">
+        <MappingFragment StoreEntitySet="V_USER_ROLES">
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="role_name" ColumnName="role_name" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="AUTH_PASS" ColumnName="AUTH_PASS" />
+          <ScalarProperty Name="AUTH_USER" ColumnName="AUTH_USER" />
+          <ScalarProperty Name="name_en" ColumnName="name_en" />
+          <ScalarProperty Name="name_th" ColumnName="name_th" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="P_CATEGORIES_LEVEL" FunctionName="JIFFYModel.Store.P_CATEGORIES_LEVEL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="JIFFYModel.P_CATEGORIES_LEVEL_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descr_th" ColumnName="descr_th" />
+          <ScalarProperty Name="descr_en" ColumnName="descr_en" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="name_th" ColumnName="name_th" />
+          <ScalarProperty Name="name_en" ColumnName="name_en" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="P_CATEGORIES_LOOKUP" FunctionName="JIFFYModel.Store.P_CATEGORIES_LOOKUP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="JIFFYModel.P_CATEGORIES_LOOKUP_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="concatenador" ColumnName="concatenador" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="JIFFYModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="JIFFYModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="JIFFYModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="JIFFYModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="JIFFYModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="JIFFYModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="JIFFYModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="JIFFYModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="JIFFYModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="RUNNINGs">
+      <EntityTypeMapping TypeName="JIFFYModel.RUNNING">
+        <MappingFragment StoreEntitySet="RUNNING">
+          <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+          <ScalarProperty Name="MONTH" ColumnName="MONTH" />
+          <ScalarProperty Name="DAY" ColumnName="DAY" />
+          <ScalarProperty Name="LASTID" ColumnName="LASTID" />
+          <ScalarProperty Name="ITEM" ColumnName="ITEM" />
+          <ScalarProperty Name="TABLENAME" ColumnName="TABLENAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,82 @@
+﻿@RenderPage("_Header.cshtml")
+@{
+    var _DataFactory = ((jiffyOnline.Controllers.ItemController)this.ViewContext.Controller)._DataFactory;
+}
+
+<div class="wrapper">
+    <div class="sidemenu category" style="overflow:hidden;">
+        <ul class="topsidebar">
+            <li><a href="/Item/NewArrivals">NEW ARRIVALS</a></li>
+            <li><a href="/Content/Promotion">PROMOTIONS</a></li>
+            <li style="border:0px;"><a href="/Item/BestSeller">BEST SELLER</a></li>
+        </ul>
+        <div class="cate">
+            <h1>Department</h1>
+
+            <ul>
+                @foreach (jiffyOnline.Entity.CategoriesEntity item in ViewBag.CATEGORY)
+                {
+
+                    if (item.PARENT_ID == null)
+                    {
+                        <li >
+                            >&nbsp;
+                            <a href="javascript:;" onclick="location.href = '/Item/Categories/@item.ID'" style="display:inline !important">
+                                @item.NAME_EN.ToUpper()
+                            </a>
+
+                            @{
+                        var menusList = (IEnumerable<jiffyOnline.Entity.MenuViewEntity>
+                            )_DataFactory.CreateVM(item.ID, ViewBag.CATEGORY);
+                        Html.RenderPartial("MenuPartial", menusList);
+                            }
+                        </li>
+                    }
+
+                }
+            </ul>
+
+
+
+            <script type="text/javascript">
+                $(function () {
+                    $('li')
+               .css('pointer', 'default')
+                   // $('li.secondchild').hide();
+                    $('li:has(ul)')
+                        .click(function (event) {
+                            if (this == event.target) {
+                                
+                                $(this).children().toggle('fast');
+                            }
+                            return false;
+                        })
+                        .css({ cursor: 'pointer' })
+                        .children().hide();
+                    
+                    $('li:not(:has(ul))').css({ cursor: 'default' });
+
+                });
+               // $('li.secondchild').hide();
+            </script>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    <div class="categorybanner_cate"><img src="@(ViewBag.BANNER != null ? ViewBag.BANNER.ImgDisplay : 1)" /></div>
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+
+</div>
+<div style="clear:both"></div>
+<div class="bannerfooter">
+    <img src="~/Content/img/banner-footer.png" />
+</div>
+
+@RenderPage("_Footer.cshtml")
+    </div>
+</body>
+</html>

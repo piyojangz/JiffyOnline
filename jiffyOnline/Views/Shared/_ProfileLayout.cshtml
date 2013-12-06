@@ -1,0 +1,27 @@
+﻿@RenderPage("_Header.cshtml")
+        <div class="wrapper">
+            <h2 class="title">MY ACCOUNT</h2>
+            <div class="sidemenu category" style="overflow:hidden;">
+                <ul class="topsidebar">
+                    <li><a href="/Home/MyProfile">MY PROFILE</a></li>
+                    <li><a href="/Home/OrderStatus">ORDER STATUS</a></li>
+                    <li><a href="/Home/OrderHistory">ORDER HISTORY</a></li>
+                    <li style="border:0px;"><a href="/Home/Wishlist">MY WISH LIST</a></li>
+                </ul>
+            </div>
+            
+            @RenderBody()
+
+            @Scripts.Render("~/bundles/jquery")
+            @RenderSection("scripts", required: false)
+
+
+        </div>
+        <div style="clear:both"></div>
+        <div class="bannerfooter">
+            <img src="~/Content/img/banner-footer.png" />
+        </div>
+        @RenderPage("_Footer.cshtml")
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿@{
+    Layout = "~/Views/Shared/_CategoryLayout.cshtml";
+}
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<jiffyOnline.Entity.ProductsEntity>
+@using (Html.BeginForm())
+{
+    <div style="padding: 10px 5px 70px 2px; float: right; width: 785px;">
+        <div style="width:100%;height:50px;">
+            @{
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    listItems.Add(new SelectListItem
+         {
+             Text = "Sort for All",
+             Value = "",
+             Selected = true
+         });
+    listItems.Add(new SelectListItem
+         {
+             Text = "Newest",
+             Value = "Newest",
+         });
+    listItems.Add(new SelectListItem
+         {
+             Text = "Name(a-z)",
+             Value = "OrderByAZ"
+         });
+
+    listItems.Add(new SelectListItem
+    {
+        Text = "Name(z-a)",
+        Value = "OrderByZA"
+
+    });
+
+    listItems.Add(new SelectListItem
+    {
+        Text = "Price(high-low)",
+        Value = "OrderByHL"
+
+    });
+
+    listItems.Add(new SelectListItem
+    {
+        Text = "Price(low-high)",
+        Value = "OrderByLH"
+
+    });
+
+       
+ }
+            @Html.DropDownListFor(m => m.First().NAME_EN, listItems, "-- Select --", new { id = "Selectcytherea", name = "Selectcytherea", onchange = "this.form.submit()" })
+           
+        </div>
+
+
+
+        @foreach (var item in Model)
+        {
+            <div class="productbox">
+                <a href="/Item/Detail/@item.ID">
+                    <img src="@item.IMAGESDisplay" width="170" />
+                </a>
+                <a href="/Item/Detail/@item.ID">
+                    <h1>@item.NAME_EN</h1>
+                </a>
+                <p>@item.SHORT_DESCR_EN</p>
+                @if (item.OLD_PRICE.Value != null)
+                {
+                    <p class="price"><strike>@item.OLD_PRICE.Value.ToString("#,##.00") Bath</strike></p>
+                    <p class="price" style="font-weight:700;color:#F00;">@item.PRICE.ToString("#,##.00") Bath</p>
+                }
+                else
+                {
+                    <p class="price">@item.PRICE.ToString("#,##.00") Bath</p>
+                }
+
+            </div>
+
+        }
+
+        <hr class="cate" />
+        <div class="pagedList" style="position:absolute; bottom:0;right:0;">
+            @Html.PagedListPager(Model, page => Url.Action("Categories", "Item", new { page }), PagedListRenderOptions.MinimalWithPageCountText)
+        </div>
+
+    </div>
+}

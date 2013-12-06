@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8dde817a841e4e388b0320a0cea6856c" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="JIFFYModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_AMPHUR" Width="1.5" PointX="15" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_AMPHUR_POSTCODE" Width="1.5" PointX="17.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_BANNER" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_BRAND" Width="1.5" PointX="5.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_CATEGORIES" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_CATEGORIES_ATT" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_CONTENT" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_CUSTOMER" Width="1.5" PointX="20" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_CUSTOMER_GROUP" Width="1.5" PointX="17.75" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_DISTRICT" Width="1.5" PointX="17.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_IMAGE" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_ORDER" Width="1.5" PointX="15" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_ORDERCART" Width="1.5" PointX="17.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_PRODUCT_RELATION" Width="1.5" PointX="10.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_PRODUCT_TIER_PRICE" Width="1.5" PointX="5.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_PRODUCTS" Width="1.5" PointX="8" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_PRODUCTS_ATT" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_PROGRAM" Width="1.5" PointX="7.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_PROMOTION" Width="1.5" PointX="12.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_PROMOTION_CONDITION" Width="1.5" PointX="15" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_PROVINCE" Width="1.5" PointX="12.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_ROLE" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_SHIPPINGMETHOD" Width="1.5" PointX="12.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_STORE" Width="1.5" PointX="7.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_USERS" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_VENDOR" Width="1.5" PointX="5.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_WISHLIST" Width="1.5" PointX="9.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_LOOKUP" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_ONHAND" Width="1.5" PointX="10.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JIFFYModel.T_ROLE_D" Width="1.5" PointX="10" PointY="15" IsExpanded="true" />
+        <AssociationConnector Association="JIFFYModel.FK_T_AMPHUR_POSTCODE_T_AMPHUR" ManuallyRouted="false" />
+        <AssociationConnector Association="JIFFYModel.FK_T_AMPHUR_T_PRIVINCE" ManuallyRouted="false" />
+        <AssociationConnector Association="JIFFYModel.FK_T_DISTRICT_T_AMPHUR" ManuallyRouted="false" />
+        <AssociationConnector Association="JIFFYModel.FK_T_PRODUCTS_T_BRAND" ManuallyRouted="false" />
+        <AssociationConnector Association="JIFFYModel.FK_T_CATEGORIES_ATT_T_CATEGORIES" ManuallyRouted="false" />
+        <AssociationConnector Association="JIFFYModel.FK_T_PRODUCTS_T_CATEGORIES" ManuallyRouted="false" />
+        <AssociationConnector Association="JIFFYModel.FK_T_PRODUCTS_ATT_T_CATEGORIES_ATT" ManuallyRouted="false" />
+        <AssociationConnector Association="JIFFYModel.FKCUSTOMER" ManuallyRouted="false" />
+        <AssociationConnector Association="JIFFYModel.Fk_T_ORDER_0" ManuallyRouted="false" />
+        <AssociationConnector Association="JIFFYModel.Fk_T_ORDERCART" ManuallyRouted="false" />
+        <AssociationConnector Association="JIFFYModel.FK_T_PRODUCT_RELATION_T_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="JIFFYModel.FK_T_ONHAND_T_PRODUCTS" ManuallyRouted="false" />
+        <AssociationConnector Association="JIFFYModel.FK_T_PRODUCTS_ATT_T_PRODUCTS" ManuallyRouted="false" />
+        <AssociationConnector Association="JIFFYModel.FK_T_PRODUCTS_T_VENDOR" ManuallyRouted="false" />
+        <AssociationConnector Association="JIFFYModel.FK_T_ROLE_D_T_PROGRAM" ManuallyRouted="false" />
+        <AssociationConnector Association="JIFFYModel.FK_T_PROMOTION_CONDITION_T_PROMOTION" ManuallyRouted="false" />
+        <AssociationConnector Association="JIFFYModel.FK_T_USERS_T_ROLE" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="JIFFYModel.T_PROMOTION_EXCLUDE" Width="1.5" PointX="15" PointY="24.375" />
+        <AssociationConnector Association="JIFFYModel.FK__T_PROMOTI__PROMO__625A9A57" />
+        <EntityTypeShape EntityType="JIFFYModel.V_BANNER" Width="1.5" PointX="19.75" PointY="0.75" />
+        <EntityTypeShape EntityType="JIFFYModel.V_CONTENT_TYPE" Width="1.5" PointX="17.75" PointY="6.75" />
+        <EntityTypeShape EntityType="JIFFYModel.V_PRODUCT_CATAGORIES" Width="1.5" PointX="19.75" PointY="5.75" />
+        <EntityTypeShape EntityType="JIFFYModel.V_PRODUCT_RELATION" Width="1.5" PointX="19.75" PointY="9.75" />
+        <EntityTypeShape EntityType="JIFFYModel.V_PRODUCTS" Width="1.5" PointX="21.75" PointY="0.75" />
+        <EntityTypeShape EntityType="JIFFYModel.V_PROMOTION_COND" Width="1.5" PointX="21.75" PointY="8.75" />
+        <EntityTypeShape EntityType="JIFFYModel.V_PROMOTION_EXCLUDE" Width="1.5" PointX="0.75" PointY="22.75" />
+        <EntityTypeShape EntityType="JIFFYModel.V_ROLE_PROGRAM" Width="1.5" PointX="2.75" PointY="22.75" />
+        <EntityTypeShape EntityType="JIFFYModel.V_USER_ROLES" Width="1.5" PointX="22.75" PointY="13.75" />
+        <EntityTypeShape EntityType="JIFFYModel.RUNNING" Width="1.5" PointX="22.375" PointY="17.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

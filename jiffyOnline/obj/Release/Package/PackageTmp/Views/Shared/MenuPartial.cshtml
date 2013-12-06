@@ -1,0 +1,16 @@
+﻿@model List<jiffyOnline.Entity.MenuViewEntity>
+
+@foreach (var menuitem in Model)
+{
+    <ul>
+        <li class="secondchild">
+            &bull;&nbsp;<a href="javascript:;" style="display:inline !important" onclick="location.href = '/Item/Categories/@menuitem.MenuId'">
+                @menuitem.Name.ToUpper()
+                @{
+    Html.RenderPartial("MenuPartial", menuitem.Children);
+                }
+            </a>
+
+        </li>
+    </ul>
+}

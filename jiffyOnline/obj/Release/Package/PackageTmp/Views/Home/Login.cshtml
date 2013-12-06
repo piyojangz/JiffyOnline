@@ -1,0 +1,39 @@
+﻿@model jiffyOnline.Models.LoginModel
+@{
+    Layout = "~/Views/Shared/_CartLayout.cshtml";
+}
+
+<section class="form-horizontal" style="width:500px; margin-top:10px;margin-left:20px;" role="form">
+    <h2 class="title">Login Form</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        
+         <div class="form-group">
+            <label for="" class="col-sm-4 control-label">ชื่อผู้ใช้</label>
+            <div class="col-sm-7">
+                @Html.TextBoxFor(m => m.AUTH_USER)
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">รหัสผ่าน</label>
+            <div class="col-sm-7">
+                @Html.PasswordFor(m => m.AUTH_PASS)
+            </div>
+        </div>
+         <div class="form-group">
+            <label for="" class="col-sm-4 control-label">จดจำไว้ในระบบ</label>
+            <div class="col-sm-7">
+                @Html.CheckBoxFor(m => m.RememberMe)
+            </div>
+        </div>
+            <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-7">
+                <button type="submit" class="btn  btn-primary" name="Button" value="Login">เข้าสู่ระบบ</button>
+
+                <button type="button" class="btn  btn-primary" name="Button" value="Register" onclick="location.href='/Home/Register'">สมัครสมาชิก</button>
+            </div>
+        </div>
+    }
+</section>

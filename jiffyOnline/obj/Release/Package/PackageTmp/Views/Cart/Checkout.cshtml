@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/_CartLayout.cshtml";
+}
+
+<h2 class="title">Checkout</h2>
+<hr />
+<div class="checkoutForm">
+    <h4>Returning Customer</h4>
+    <h5>Log in to complete the checkout process.</h5>
+
+    <form class="form-horizontal" role="form" style="margin-top: 10px; float: right;">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-4 control-label">Email Address</label>
+            <div class="col-sm-6">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-4 control-label">Password</label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-14">
+                <div class="checkbox">
+                    <label>
+                        <a href="#">Forgot Password?</a>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div style="float: left; margin-right: 24px;">
+                <button type="button" class="btn" style="background: #bee2f8; color: #6098ba; width: 200px; font-size: 20px; margin: 5px;">
+                    LOGIN & CONTINUE
+                </button>
+                <button type="button" class="btn" style="background: #bee2f8;
+color: #6098ba; width:200px; font-size:20px; margin:5px;">
+                    LOGIN WITH FACEBOOK
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="checkoutForm_">
+    <h4>First-Time Customer</h4>
+    <h5>Click the "Checkout As Guest" button below to checkout and complete your order as a
+guest. You'll have a chance to create an account at the end of the checkout process if
+you want</h5>
+    <button type="button" class="btn" style="background: #bee2f8; color: #6098ba; width: 200px; font-size: 20px; margin: 5px;">
+        CHECK OUT AS GUEST
+    </button>
+</div>

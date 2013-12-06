@@ -1,0 +1,256 @@
+﻿@model jiffyOnline.Models.RegisterModel
+@{
+    Layout = "~/Views/Shared/_CartLayout.cshtml";
+}
+<section class="form-horizontal" style="width:500px; margin-top:10px;margin-left:20px;" role="form">
+    <h2 class="title">Register Form</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">ชื่อผู้ใช้
+                <font color="red">*</font></label>
+            <div class="col-sm-7">
+                @Html.TextBoxFor(m => m.AUTH_USER)
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">รหัสผ่าน
+                <font color="red">*</font></label>
+            <div class="col-sm-7">
+                @Html.PasswordFor(m => m.AUTH_PASS)
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">ยืนยันรหัสผ่าน
+                <font color="red">*</font></label>
+            <div class="col-sm-7">
+                @Html.PasswordFor(m => m.REAUTH_PASS)
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">ชื่อ
+                <font color="red">*</font></label>
+            <div class="col-sm-7">
+                @Html.TextBoxFor(m => m.FNAME)
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">นามสกุล
+                <font color="red">*</font></label>
+            <div class="col-sm-7">
+                @Html.TextBoxFor(m => m.LNAME)
+            </div>
+        </div>
+         <div class="form-group">
+            <label for="" class="col-sm-4 control-label">วันเกิด
+                <font color="red">*</font></label>
+            <div class="col-sm-7">
+                @Html.TextBoxFor(m => m.DATE_OF_BIRTH, new  { Placeholder = "dd/mm/yyyy"  })
+            </div>
+        </div>
+          <div class="form-group">
+            <label for="" class="col-sm-4 control-label">เพศ
+                <font color="red">*</font></label>
+            <div class="col-sm-7">
+                @Html.RadioButtonFor(m => m.GENDER, "m", new { Id = "GENDER_M" })
+                @Html.Label("ชาย", new { For = "GENDER_M" })
+                @Html.RadioButtonFor(m => m.GENDER, "f", new { Id = "GENDER_F" })
+                @Html.Label("หญิง", new { For = "GENDER_F" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">อีเมลล์
+                <font color="red">*</font></label>
+            <div class="col-sm-7">
+                @Html.TextBoxFor(m => m.EMAIL, new { Type = "Email" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">บริษัท
+                <font color="red">*</font></label>
+            <div class="col-sm-7">
+                @Html.TextBoxFor(m => m.COMPANYNAME)
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">ที่อยู่1</label>
+            <div class="col-sm-7">
+                @Html.TextBoxFor(m => m.ADDRESS1)
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">ที่อยู่2</label>
+            <div class="col-sm-7">
+                @Html.TextBoxFor(m => m.ADDRESS2)
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">ที่อยู่3</label>
+            <div class="col-sm-7">
+                @Html.TextBoxFor(m => m.ADDRESS3)
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">ที่อยู่4</label>
+            <div class="col-sm-7">
+                @Html.TextBoxFor(m => m.ADDRESS4)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">จังหวัด
+                <font color="red">*</font></label>
+            <div class="col-sm-7">
+                @Html.DropDownListFor(m => m.PROVINCE_ID, new SelectList(ViewBag.PROVINCELIST, "Value", "Text"),
+                              "--select one--")
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">อำเภอ
+                <font color="red">*</font></label>
+            <div class="col-sm-7">
+                @Html.DropDownListFor(m => m.AMPHUR_ID, Enumerable.Empty<SelectListItem>(),
+                                      "--select one--")
+            </div>
+            <script type="text/javascript">
+                $(function () {
+                    $("#PROVINCE_ID").change(function () {
+                        var selectedItem = $(this).val();
+                        var ddlAumphur = $("#AMPHUR_ID");
+                        var statesProgress = $("#states-loading-progress");
+                        statesProgress.show();
+                        $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: "@(Url.Action("LoadAumphur", "Home"))",
+                            data: { "provinceId": selectedItem },
+                            success: function (data) {
+                                ddlAumphur.html('--select one--');
+                                $.each(data, function (id, option) {
+                                    ddlAumphur.append($('<option></option>').val(option.Value).html(option.Text));
+                                });
+
+                            },
+                            error: function (xhr, ajaxOptions, thrownError) {
+                                alert('Failed to retrieve states.');
+
+                            }
+                        });
+                    });
+                });
+            </script>
+        </div>
+        
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">ตำบล
+                <font color="red">*</font></label>
+            <div class="col-sm-7">
+                @Html.DropDownListFor(m => m.DISTRICT_ID, Enumerable.Empty<SelectListItem>(),
+                                      "--select one--")
+            </div>
+            <script type="text/javascript">
+                $(function () {
+                    $("#AMPHUR_ID").change(function () {
+                        var selectedItem = $(this).val();
+                        var ddlDistrict = $("#DISTRICT_ID");
+                        var ddlPostcode = $("#POSTCODE");
+                        var statesProgress = $("#states-loading-progress");
+                        statesProgress.show();
+                        $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: "@(Url.Action("LoadDistrist", "Home"))",
+                            data: { "aumphuId": selectedItem },
+                            success: function (data) {
+                                ddlDistrict.html('--select one--');
+                                $.each(data, function (id, option) {
+                                    ddlDistrict.append($('<option></option>').val(option.Value).html(option.Text));
+                                });
+
+                            },
+                            error: function (xhr, ajaxOptions, thrownError) {
+                                alert('Failed to retrieve states.');
+
+                            }
+                        });
+
+                        $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: "@(Url.Action("LoadPostCode", "Home"))",
+                            data: { "aumphuId": selectedItem },
+                        success: function (data) {
+                            ddlPostcode.html('--select one--');
+                            $.each(data, function (id, option) {
+                                ddlPostcode.append($('<option></option>').val(option.Value).html(option.Text));
+                            });
+
+                        },
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            alert('Failed to retrieve states.');
+
+                        }
+                    });
+                    });
+                });
+            </script>
+        </div>
+        
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-4 control-label">รหัสไปรษณีย์
+                <font color="red">*</font></label>
+            <div class="col-sm-7">
+                @Html.DropDownListFor(m => m.POSTCODE, Enumerable.Empty<SelectListItem>(),
+                                      "--select one--")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-4 control-label">โทรศัพท์บ้าน
+                <font color="red">*</font></label>
+            <div class="col-sm-7">
+                @Html.TextBoxFor(m => m.TEL)
+            </div>
+        </div>
+            <div class="form-group">
+            <label for="inputPassword3" class="col-sm-4 control-label">โทรศัพท์มือถือ
+                <font color="red">*</font></label>
+            <div class="col-sm-7">
+                @Html.TextBoxFor(m => m.MOBILE)
+            </div>
+        </div>
+            <div class="form-group">
+            <label for="inputPassword3" class="col-sm-4 control-label">แฟกส์
+                <font color="red">*</font></label>
+            <div class="col-sm-7">
+                @Html.TextBoxFor(m => m.FAX)
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-7">
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBoxFor(m=>m.SEND_NEWS)
+                        @Html.Label("ยอมรับข่าวสารของเว็บไซต์", new { For = "SEND_NEWS" })
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-7">
+                <button type="submit" class="btn  btn-primary" name="Button" value="Register">สมครสมาชิก</button>
+
+                <button type="reset" class="btn btn-default">ล้างฟอร์ม</button>
+            </div>
+        </div>
+    }
+</section>

@@ -1,0 +1,54 @@
+﻿@RenderPage("_Header.cshtml")
+
+<div class="wrapper">
+
+    <div class="sidemenu index">
+        <h1>Department</h1>
+        <ul>
+            @foreach (jiffyOnline.Entity.CategoriesEntity item in ViewBag.CATEGORY)
+            {
+                if (item.PARENT_ID == null)
+                {
+                      <li><a href="/Item/Categories/@item.ID">>&nbsp;@item.NAME_EN.ToUpper()</a></li>
+                }
+              
+            }
+        </ul>
+    </div>
+    <div class="categorybanner" id="banner-slide">
+        <ul class="bjqs">
+            @foreach (var item in @ViewBag.BANNER_A)
+            {
+                 <li><a href="@item.Url"><img src="@if (item != null){@item.ImgDisplay}" /></a></li>
+            }
+         
+        </ul>
+    </div>
+
+    <script>
+        jQuery(document).ready(function ($) {
+            $('#banner-slide').bjqs({
+                animtype: 'slide',
+                height: 348,
+                width: 783,
+                responsive: true,
+                randomstart: true
+            });
+
+        });
+    </script>
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+
+</div>
+<div style="clear:both"></div>
+<div class="bannerfooter">
+    <img src="~/Content/img/banner-footer.png" />
+</div>
+@RenderPage("_Footer.cshtml")
+    </div>
+</body>
+</html>

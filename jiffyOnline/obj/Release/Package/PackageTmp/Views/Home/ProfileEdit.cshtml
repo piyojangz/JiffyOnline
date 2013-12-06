@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_ProfileLayout.cshtml";
+}
+
+<div class="profile">
+
+    <table width="100%">
+        <thead>
+            <tr><td colspan="4">MY PROFILE</td></tr>
+        </thead>
+
+        <tr><td>NAME</td><td>@Html.TextBox("xxx")</td><td>LAST NAME</td><td>@Html.TextBox("xxx")</td></tr>
+        <tr><td>EMAIL</td><td>@Html.TextBox("xxx")</td><td></td><td></td></tr>
+        <tr>
+            <td colspan="4">@Html.CheckBox("E-Newsletter from  www.shopaholic.com") E-Newsletter from  www.shopaholic.com </td>
+        </tr>
+        <tr> <td colspan="4"><hr /></td></tr>
+        <tr><td>Date of Birth</td><td>@Html.TextBox("xxx")</td><td>Gender</td><td>@Html.TextBox("xxx")</td></tr>
+
+        <tr>
+            <td colspan="4"></td>
+        </tr>
+        <tr>
+            <td colspan="4"></td>
+        </tr>
+        <thead>
+            <tr><td colspan="4">ADDRESS</td></tr>
+        </thead>
+        <tr><td>Address 1</td><td>@Html.TextBox("xxx")</td><td>Address 2</td><td>@Html.TextBox("xxx")</td></tr>
+        <tr><td>Address 3</td><td>@Html.TextBox("xxx")</td><td>Address 4</td><td>@Html.TextBox("xxx")</td></tr>
+        <tr><td>Sub District</td><td>@Html.TextBox("xxx")</td><td>District</td><td>@Html.TextBox("xxx")</td></tr>
+        <tr><td>Province</td><td>@Html.TextBox("xxx")</td><td>Postcode</td><td>@Html.TextBox("xxx")</td></tr>
+        <tr><td>Telephone Number</td><td>@Html.TextBox("xxx")</td><td>Mobile phone</td><td>@Html.TextBox("xxx")</td></tr>
+    </table>
+    <center><button type="submit" class="btn" name="Button" value="Save" style="background: #bee2f8; color: #6098ba; padding: 0px; width: 150px; border-radius: 0px; margin:20px 0 20px 0;">SAVE</button></center>
+</div>

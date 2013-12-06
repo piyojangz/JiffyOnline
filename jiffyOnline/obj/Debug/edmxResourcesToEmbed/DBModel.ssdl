@@ -1,0 +1,933 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JIFFYModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="T_AMPHUR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="CODE" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="NAME_TH" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="GEO_ID" Type="int" Nullable="false" />
+    <Property Name="PROVINCE_ID" Type="int" Nullable="false" />
+    <Property Name="NAME_EN" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="T_AMPHUR_POSTCODE">
+    <Key>
+      <PropertyRef Name="AMPHUR_ID" />
+      <PropertyRef Name="POST_CODE" />
+    </Key>
+    <Property Name="AMPHUR_ID" Type="int" Nullable="false" />
+    <Property Name="POST_CODE" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_BANNER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="BANNER_NAME" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ACTIVE" Type="smallint" Nullable="false" />
+    <Property Name="POSITION" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="URL" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="BANNER_TYPE" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="REF_ID" Type="int" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="T_BRAND">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NAME_TH" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="NAME_EN" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="T_CATEGORIES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NAME_TH" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="NAME_EN" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="PARENT_ID" Type="int" />
+    <Property Name="DESCR_TH" Type="nvarchar" MaxLength="1000" />
+    <Property Name="DESCR_EN" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ACTIVE" Type="smallint" Nullable="false" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="T_CATEGORIES_ATT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="CATEGORIES_ID" Type="int" Nullable="false" />
+    <Property Name="NAME_TH" Type="nvarchar" MaxLength="200" />
+    <Property Name="NAME_EN" Type="nvarchar" MaxLength="200" />
+    <Property Name="ACTIVE" Type="smallint" Nullable="false" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="T_CONTENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TYPE" Type="nvarchar" MaxLength="100" />
+    <Property Name="HTML_TEXT" Type="ntext" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="T_CUSTOMER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="CUSTOMER_GROUP" Type="int" />
+    <Property Name="FNAME" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="LNAME" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="DATE_OF_BIRTH" Type="date" Nullable="false" />
+    <Property Name="SEND_NEWS" Type="smallint" Nullable="false" />
+    <Property Name="AUTH_USER" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="AUTH_PASS" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="TYPE" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="COMPANYNAME" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ADDRESS1" Type="nvarchar" MaxLength="100" />
+    <Property Name="ADDRESS2" Type="nvarchar" MaxLength="100" />
+    <Property Name="ADDRESS3" Type="nvarchar" MaxLength="100" />
+    <Property Name="ADDRESS4" Type="nvarchar" MaxLength="100" />
+    <Property Name="PROVINCE_ID" Type="int" Nullable="false" />
+    <Property Name="DISTRICT_ID" Type="int" Nullable="false" />
+    <Property Name="AMPHUR_ID" Type="int" Nullable="false" />
+    <Property Name="POSTCODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TEL" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MOBILE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="FAX" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="GENDER" Type="nvarchar" MaxLength="100" />
+    <Property Name="POINT" Type="int" />
+  </EntityType>
+  <EntityType Name="T_CUSTOMER_GROUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NAME_EN" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="NAME_TH" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="TOTAL_AMOUNT" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="T_DISTRICT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="CODE" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="NAME_TH" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="AMPHUR_ID" Type="int" Nullable="false" />
+    <Property Name="PROVINCE_ID" Type="int" Nullable="false" />
+    <Property Name="GEO_ID" Type="int" Nullable="false" />
+    <Property Name="NAME_EN" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="T_IMAGE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="REF_ID" Type="int" Nullable="false" />
+    <Property Name="TYPE" Type="nvarchar" MaxLength="100" />
+    <Property Name="IMG" Type="nvarchar" MaxLength="500" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="PRIORITY" Type="int" />
+    <Property Name="ACTIVE" Type="smallint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'JIFFY_DB.dbo.T_LOOKUP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="T_LOOKUP">
+    <Key>
+      <PropertyRef Name="LOOKUP_TYPE" />
+      <PropertyRef Name="LOOKUP_CODE" />
+      <PropertyRef Name="MEANING" />
+    </Key>
+    <Property Name="LOOKUP_TYPE" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LOOKUP_CODE" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MEANING" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'JIFFY_DB.dbo.T_ONHAND' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="T_ONHAND">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="PRODUCT_ID" />
+      <PropertyRef Name="QUANTITY" />
+      <PropertyRef Name="CREATE_DATE" />
+      <PropertyRef Name="CREATE_BY" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="PRODUCT_ID" Type="int" Nullable="false" />
+    <Property Name="LOT" Type="nvarchar" MaxLength="100" />
+    <Property Name="SN" Type="nvarchar" MaxLength="100" />
+    <Property Name="QUANTITY" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="CREATE_DATE" Type="datetime" Nullable="false" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="COST" Type="numeric" Precision="19" Scale="2" />
+  </EntityType>
+  <EntityType Name="T_ORDER">
+    <Key>
+      <PropertyRef Name="ORDERID" />
+    </Key>
+    <Property Name="ORDERID" Type="int" Nullable="false" />
+    <Property Name="CUSTOMER_ID" Type="int" />
+    <Property Name="SHIPPINGMETHOD" Type="int" />
+    <Property Name="PAYMENTTYPE" Type="nvarchar" MaxLength="100" />
+    <Property Name="ORDERSTATUS" Type="nvarchar" MaxLength="100" />
+    <Property Name="SHIPPINGCOST" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ORDERDISCOUNT" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="CUSTOMERIP" Type="nvarchar" MaxLength="50" />
+    <Property Name="TOTAL" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ORDERDATE" Type="datetime" />
+    <Property Name="PAYMENTDATE" Type="datetime" />
+    <Property Name="CUSTOMERCOMMENT" Type="nvarchar" MaxLength="500" />
+    <Property Name="SHIPPINGNAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="SHIPPINGPROVINCE" Type="nvarchar" MaxLength="200" />
+    <Property Name="SHIPPINGAMPHUR" Type="nvarchar" MaxLength="200" />
+    <Property Name="SHIPPINGDISTRICT" Type="nvarchar" MaxLength="200" />
+    <Property Name="SHIPPINGPOSTCODE" Type="nvarchar" MaxLength="10" />
+    <Property Name="SHIPPINGADDRESS1" Type="nvarchar" MaxLength="100" />
+    <Property Name="SHIPPINGEMAIL" Type="nvarchar" MaxLength="100" />
+    <Property Name="SHIPPINGTEL" Type="nvarchar" MaxLength="20" />
+    <Property Name="SHIPPINGFAX" Type="nvarchar" MaxLength="20" />
+    <Property Name="BILLINGNAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="BILLINGPROVINCE" Type="nvarchar" MaxLength="200" />
+    <Property Name="BILLINGAMPHUR" Type="nvarchar" MaxLength="200" />
+    <Property Name="BILLINGDISTRICT" Type="nvarchar" MaxLength="200" />
+    <Property Name="BILLINGPOSTCODE" Type="nvarchar" MaxLength="10" />
+    <Property Name="BILLINGADDRESS1" Type="nvarchar" MaxLength="100" />
+    <Property Name="BILLINGEMAIL" Type="nvarchar" MaxLength="100" />
+    <Property Name="BILLINGTEL" Type="nvarchar" MaxLength="20" />
+    <Property Name="BILLINGFAX" Type="nvarchar" MaxLength="20" />
+    <Property Name="PAYMENTNUMBER" Type="nvarchar" MaxLength="100" />
+    <Property Name="SHIPPINGADDRESS2" Type="nvarchar" MaxLength="100" />
+    <Property Name="SHIPPINGADDRESS3" Type="nvarchar" MaxLength="100" />
+    <Property Name="SHIPPINGADDRESS4" Type="nvarchar" MaxLength="100" />
+    <Property Name="SHIPPINGMOBILE" Type="nvarchar" MaxLength="20" />
+    <Property Name="BILLINGADDRESS2" Type="nvarchar" MaxLength="100" />
+    <Property Name="BILLINGADDRESS3" Type="nvarchar" MaxLength="100" />
+    <Property Name="BILLINGADDRESS4" Type="nvarchar" MaxLength="100" />
+    <Property Name="CUSTOMERNAME" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="T_ORDERCART">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ORDER_ID" Type="int" />
+    <Property Name="PRODUCT_ID" Type="int" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="PRICE" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="QUANTITY" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="COST" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="OLD_PRICE" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="PROMOTION_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="T_PRODUCT_RELATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="PRODUCT_ID" Type="int" Nullable="false" />
+    <Property Name="RELATE_PRODUCT_ID" Type="int" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="T_PRODUCT_TIER_PRICE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="PRODUCT_SKU" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CUSTOMER_GROUP" Type="int" Nullable="false" />
+    <Property Name="PRICE" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="QTY" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="IS_ABOVE" Type="smallint" Nullable="false" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="T_PRODUCTS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NAME_TH" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="NAME_EN" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="DESCR_TH" Type="nvarchar" MaxLength="1000" />
+    <Property Name="DESCR_EN" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CATEGORIES_ID" Type="int" Nullable="false" />
+    <Property Name="PRODUCT_SKU" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="VENDOR_ID" Type="int" Nullable="false" />
+    <Property Name="COST" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="PRICE" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="ACTIVE" Type="smallint" Nullable="false" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="SHORT_DESCR_TH" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="SHORT_DESCR_EN" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="OLD_PRICE" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="BUY_FLAG" Type="smallint" Nullable="false" />
+    <Property Name="WISH_LIST" Type="smallint" Nullable="false" />
+    <Property Name="CALL_PRICE_FLAG" Type="smallint" Nullable="false" />
+    <Property Name="SHIPPING_FLAG" Type="smallint" Nullable="false" />
+    <Property Name="SHIPPING_CHARGE" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="TAX_VALUE" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="TAX_TYPE" Type="nvarchar" MaxLength="50" />
+    <Property Name="MIN_QTY" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="MAX_QTY" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="STOCK_QTY" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="DISPLAY_QTY_FLAG" Type="smallint" Nullable="false" />
+    <Property Name="MIN_STOCK_QTY" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="NEW_ARRIVAL_FLAG" Type="smallint" />
+    <Property Name="BRAND_ID" Type="int" Nullable="false" />
+    <Property Name="RECOMMEND_FLAG" Type="smallint" />
+    <Property Name="WEIGTH" Type="numeric" Precision="19" Scale="2" />
+  </EntityType>
+  <EntityType Name="T_PRODUCTS_ATT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="PRODUCT_ID" Type="int" Nullable="false" />
+    <Property Name="CATEGORIES_ATT_ID" Type="int" Nullable="false" />
+    <Property Name="DESCR_TH" Type="nvarchar" MaxLength="1000" />
+    <Property Name="DESCR_EN" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ACTIVE" Type="smallint" Nullable="false" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="T_PROGRAM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DESC" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="RANK" Type="int" />
+    <Property Name="TYPE" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="T_PROMOTION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="PROMO_NAME_TH" Type="nvarchar" MaxLength="200" />
+    <Property Name="PROMO_DESC_TH" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ACTIVE" Type="smallint" Nullable="false" />
+    <Property Name="CUSTOMER_GROUP" Type="int" />
+    <Property Name="COUPON" Type="smallint" Nullable="false" />
+    <Property Name="COUPON_CODE" Type="nvarchar" MaxLength="20" />
+    <Property Name="USER_PER_COUPON" Type="int" />
+    <Property Name="USER_PER_CUSTOMER" Type="int" />
+    <Property Name="FROM_DATE" Type="date" />
+    <Property Name="TO_DATE" Type="date" />
+    <Property Name="PRIORITY" Type="int" />
+    <Property Name="PUBLIC_IN_RSS_FEED" Type="smallint" />
+    <Property Name="APPLY" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DISCOUNT_AMOUNT" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="MAX_QTY_DISCOUNT_IS_APPLIED_TO" Type="int" />
+    <Property Name="DISCOUNT_QTY_STEP" Type="int" />
+    <Property Name="APPLY_TO_SHIPPING_AMOUNT" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="FREE_SHIPPING" Type="smallint" />
+    <Property Name="MAX_QTY_PER_EACH" Type="nvarchar" MaxLength="100" />
+    <Property Name="PROMO_START_TIME" Type="time" Precision="7" />
+    <Property Name="PROMO_END_TIME" Type="time" Precision="7" />
+    <Property Name="USE_COUNT" Type="int" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="PROMO_NAME_EN" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="PROMO_DESC_EN" Type="nvarchar" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PROMOTION_CONDITION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="PROMOTION_ID" Type="int" Nullable="false" />
+    <Property Name="CONDITION_TYPE" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="REF_ID" Type="int" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="T_PROVINCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="CODE" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="NAME_TH" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="GEO_ID" Type="int" Nullable="false" />
+    <Property Name="NAME_EN" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="T_ROLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CREATE_DATE" Type="datetime" Nullable="false" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'JIFFY_DB.dbo.T_ROLE_D' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="T_ROLE_D">
+    <Key>
+      <PropertyRef Name="CREATE_DATE" />
+      <PropertyRef Name="CREATE_BY" />
+    </Key>
+    <Property Name="ROLE_ID" Type="int" />
+    <Property Name="PROGRAM_ID" Type="int" />
+    <Property Name="CREATE_DATE" Type="datetime" Nullable="false" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="T_SHIPPINGMETHOD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="DESCR" Type="nvarchar" MaxLength="500" />
+    <Property Name="ACTIVE" Type="smallint" />
+    <Property Name="PRICE" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="T_STORE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NAME_TH" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="NAME_EN" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="LOCATION_TH" Type="nvarchar" MaxLength="1000" />
+    <Property Name="LOCATION_EN" Type="nvarchar" MaxLength="1000" />
+    <Property Name="TEL" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="T_USERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="FNAME_TH" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="FNAME_EN" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="LNAME_TH" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="LNAME_EN" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="AUTH_USER" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AUTH_PASS" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="CREATE_DATE" Type="datetime" Nullable="false" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="ROLE_ID" Type="int" Nullable="false" />
+    <Property Name="ACTIVE" Type="smallint" />
+  </EntityType>
+  <EntityType Name="T_VENDOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NAME_TH" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="NAME_EN" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="DESCR" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CONTACT_NAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CONTACT_EMAIL" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CONTACT_ADDRESS" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CONTACT_TEL" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ACTIVE" Type="smallint" Nullable="false" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+    <Property Name="DELETE_BY" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="T_WISHLIST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="PRODUCT_ID" Type="int" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="PRICE" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="COST" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="QUANTITY" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="OLD_PRICE" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="PROMOTION_ID" Type="int" />
+    <Property Name="CUSTOMER_ID" Type="int" />
+    <Property Name="ORDERDATE" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_T_AMPHUR_POSTCODE_T_AMPHUR">
+    <End Role="T_AMPHUR" Type="Self.T_AMPHUR" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_AMPHUR_POSTCODE" Type="Self.T_AMPHUR_POSTCODE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_AMPHUR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_AMPHUR_POSTCODE">
+        <PropertyRef Name="AMPHUR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_AMPHUR_T_PRIVINCE">
+    <End Role="T_PROVINCE" Type="Self.T_PROVINCE" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_AMPHUR" Type="Self.T_AMPHUR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_PROVINCE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_AMPHUR">
+        <PropertyRef Name="PROVINCE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_CATEGORIES_ATT_T_CATEGORIES">
+    <End Role="T_CATEGORIES" Type="Self.T_CATEGORIES" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_CATEGORIES_ATT" Type="Self.T_CATEGORIES_ATT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_CATEGORIES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_CATEGORIES_ATT">
+        <PropertyRef Name="CATEGORIES_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DISTRICT_T_AMPHUR">
+    <End Role="T_AMPHUR" Type="Self.T_AMPHUR" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_DISTRICT" Type="Self.T_DISTRICT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_AMPHUR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_DISTRICT">
+        <PropertyRef Name="AMPHUR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_ONHAND_T_PRODUCTS">
+    <End Role="T_PRODUCTS" Type="Self.T_PRODUCTS" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_ONHAND" Type="Self.T_ONHAND" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_PRODUCTS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_ONHAND">
+        <PropertyRef Name="PRODUCT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_T_ORDER_0">
+    <End Role="T_SHIPPINGMETHOD" Type="Self.T_SHIPPINGMETHOD" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_ORDER" Type="Self.T_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_SHIPPINGMETHOD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_ORDER">
+        <PropertyRef Name="SHIPPINGMETHOD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_T_ORDERCART">
+    <End Role="T_ORDER" Type="Self.T_ORDER" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_ORDERCART" Type="Self.T_ORDERCART" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_ORDER">
+        <PropertyRef Name="ORDERID" />
+      </Principal>
+      <Dependent Role="T_ORDERCART">
+        <PropertyRef Name="ORDER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_PRODUCT_RELATION_T_PRODUCT">
+    <End Role="T_PRODUCTS" Type="Self.T_PRODUCTS" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_PRODUCT_RELATION" Type="Self.T_PRODUCT_RELATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_PRODUCTS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_PRODUCT_RELATION">
+        <PropertyRef Name="PRODUCT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_T_PRODUCT_TIER_PRICE_T_PRODUCTS' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_T_PRODUCT_TIER_PRICE_T_PRODUCTS" />-->
+  <Association Name="FK_T_PRODUCTS_ATT_T_CATEGORIES_ATT">
+    <End Role="T_CATEGORIES_ATT" Type="Self.T_CATEGORIES_ATT" Multiplicity="1" />
+    <End Role="T_PRODUCTS_ATT" Type="Self.T_PRODUCTS_ATT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_CATEGORIES_ATT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_PRODUCTS_ATT">
+        <PropertyRef Name="CATEGORIES_ATT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_PRODUCTS_ATT_T_PRODUCTS">
+    <End Role="T_PRODUCTS" Type="Self.T_PRODUCTS" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_PRODUCTS_ATT" Type="Self.T_PRODUCTS_ATT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_PRODUCTS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_PRODUCTS_ATT">
+        <PropertyRef Name="PRODUCT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_PRODUCTS_T_BRAND">
+    <End Role="T_BRAND" Type="Self.T_BRAND" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_PRODUCTS" Type="Self.T_PRODUCTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_BRAND">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_PRODUCTS">
+        <PropertyRef Name="BRAND_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_PRODUCTS_T_CATEGORIES">
+    <End Role="T_CATEGORIES" Type="Self.T_CATEGORIES" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_PRODUCTS" Type="Self.T_PRODUCTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_CATEGORIES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_PRODUCTS">
+        <PropertyRef Name="CATEGORIES_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_PRODUCTS_T_VENDOR">
+    <End Role="T_VENDOR" Type="Self.T_VENDOR" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_PRODUCTS" Type="Self.T_PRODUCTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_VENDOR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_PRODUCTS">
+        <PropertyRef Name="VENDOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_PROMOTION_CONDITION_T_PROMOTION">
+    <End Role="T_PROMOTION" Type="Self.T_PROMOTION" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_PROMOTION_CONDITION" Type="Self.T_PROMOTION_CONDITION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_PROMOTION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_PROMOTION_CONDITION">
+        <PropertyRef Name="PROMOTION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_ROLE_D_T_PROGRAM">
+    <End Role="T_PROGRAM" Type="Self.T_PROGRAM" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_ROLE_D" Type="Self.T_ROLE_D" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_PROGRAM">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_ROLE_D">
+        <PropertyRef Name="PROGRAM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_USERS_T_ROLE">
+    <End Role="T_ROLE" Type="Self.T_ROLE" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_USERS" Type="Self.T_USERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_ROLE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_USERS">
+        <PropertyRef Name="ROLE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKCUSTOMER">
+    <End Role="T_CUSTOMER_GROUP" Type="Self.T_CUSTOMER_GROUP" Multiplicity="0..1" />
+    <End Role="T_CUSTOMER" Type="Self.T_CUSTOMER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_CUSTOMER_GROUP">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_CUSTOMER">
+        <PropertyRef Name="CUSTOMER_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="JIFFYModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_AMPHUR" EntityType="Self.T_AMPHUR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_AMPHUR_POSTCODE" EntityType="Self.T_AMPHUR_POSTCODE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_BANNER" EntityType="Self.T_BANNER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_BRAND" EntityType="Self.T_BRAND" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_CATEGORIES" EntityType="Self.T_CATEGORIES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_CATEGORIES_ATT" EntityType="Self.T_CATEGORIES_ATT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_CONTENT" EntityType="Self.T_CONTENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_CUSTOMER" EntityType="Self.T_CUSTOMER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_CUSTOMER_GROUP" EntityType="Self.T_CUSTOMER_GROUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_DISTRICT" EntityType="Self.T_DISTRICT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_IMAGE" EntityType="Self.T_IMAGE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_ORDER" EntityType="Self.T_ORDER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_ORDERCART" EntityType="Self.T_ORDERCART" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PRODUCT_RELATION" EntityType="Self.T_PRODUCT_RELATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PRODUCT_TIER_PRICE" EntityType="Self.T_PRODUCT_TIER_PRICE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PRODUCTS" EntityType="Self.T_PRODUCTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PRODUCTS_ATT" EntityType="Self.T_PRODUCTS_ATT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PROGRAM" EntityType="Self.T_PROGRAM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PROMOTION" EntityType="Self.T_PROMOTION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PROMOTION_CONDITION" EntityType="Self.T_PROMOTION_CONDITION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PROVINCE" EntityType="Self.T_PROVINCE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_ROLE" EntityType="Self.T_ROLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_SHIPPINGMETHOD" EntityType="Self.T_SHIPPINGMETHOD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_STORE" EntityType="Self.T_STORE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_USERS" EntityType="Self.T_USERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_VENDOR" EntityType="Self.T_VENDOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_WISHLIST" EntityType="Self.T_WISHLIST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_LOOKUP" EntityType="Self.T_LOOKUP" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[T_LOOKUP].[LOOKUP_TYPE] AS [LOOKUP_TYPE], 
+[T_LOOKUP].[LOOKUP_CODE] AS [LOOKUP_CODE], 
+[T_LOOKUP].[MEANING] AS [MEANING]
+FROM [dbo].[T_LOOKUP] AS [T_LOOKUP]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="T_ONHAND" EntityType="Self.T_ONHAND" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[T_ONHAND].[ID] AS [ID], 
+[T_ONHAND].[PRODUCT_ID] AS [PRODUCT_ID], 
+[T_ONHAND].[LOT] AS [LOT], 
+[T_ONHAND].[SN] AS [SN], 
+[T_ONHAND].[QUANTITY] AS [QUANTITY], 
+[T_ONHAND].[CREATE_DATE] AS [CREATE_DATE], 
+[T_ONHAND].[CREATE_BY] AS [CREATE_BY], 
+[T_ONHAND].[UPDATE_DATE] AS [UPDATE_DATE], 
+[T_ONHAND].[UPDATE_BY] AS [UPDATE_BY], 
+[T_ONHAND].[DELETE_DATE] AS [DELETE_DATE], 
+[T_ONHAND].[DELETE_BY] AS [DELETE_BY], 
+[T_ONHAND].[COST] AS [COST]
+FROM [dbo].[T_ONHAND] AS [T_ONHAND]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="T_ROLE_D" EntityType="Self.T_ROLE_D" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[T_ROLE_D].[ROLE_ID] AS [ROLE_ID], 
+[T_ROLE_D].[PROGRAM_ID] AS [PROGRAM_ID], 
+[T_ROLE_D].[CREATE_DATE] AS [CREATE_DATE], 
+[T_ROLE_D].[CREATE_BY] AS [CREATE_BY], 
+[T_ROLE_D].[UPDATE_DATE] AS [UPDATE_DATE], 
+[T_ROLE_D].[UPDATE_BY] AS [UPDATE_BY], 
+[T_ROLE_D].[DELETE_DATE] AS [DELETE_DATE], 
+[T_ROLE_D].[DELETE_BY] AS [DELETE_BY]
+FROM [dbo].[T_ROLE_D] AS [T_ROLE_D]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_T_AMPHUR_POSTCODE_T_AMPHUR" Association="Self.FK_T_AMPHUR_POSTCODE_T_AMPHUR">
+      <End Role="T_AMPHUR" EntitySet="T_AMPHUR" />
+      <End Role="T_AMPHUR_POSTCODE" EntitySet="T_AMPHUR_POSTCODE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_AMPHUR_T_PRIVINCE" Association="Self.FK_T_AMPHUR_T_PRIVINCE">
+      <End Role="T_PROVINCE" EntitySet="T_PROVINCE" />
+      <End Role="T_AMPHUR" EntitySet="T_AMPHUR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_CATEGORIES_ATT_T_CATEGORIES" Association="Self.FK_T_CATEGORIES_ATT_T_CATEGORIES">
+      <End Role="T_CATEGORIES" EntitySet="T_CATEGORIES" />
+      <End Role="T_CATEGORIES_ATT" EntitySet="T_CATEGORIES_ATT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DISTRICT_T_AMPHUR" Association="Self.FK_T_DISTRICT_T_AMPHUR">
+      <End Role="T_AMPHUR" EntitySet="T_AMPHUR" />
+      <End Role="T_DISTRICT" EntitySet="T_DISTRICT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_ONHAND_T_PRODUCTS" Association="Self.FK_T_ONHAND_T_PRODUCTS">
+      <End Role="T_PRODUCTS" EntitySet="T_PRODUCTS" />
+      <End Role="T_ONHAND" EntitySet="T_ONHAND" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_T_ORDER_0" Association="Self.Fk_T_ORDER_0">
+      <End Role="T_SHIPPINGMETHOD" EntitySet="T_SHIPPINGMETHOD" />
+      <End Role="T_ORDER" EntitySet="T_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_T_ORDERCART" Association="Self.Fk_T_ORDERCART">
+      <End Role="T_ORDER" EntitySet="T_ORDER" />
+      <End Role="T_ORDERCART" EntitySet="T_ORDERCART" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_PRODUCT_RELATION_T_PRODUCT" Association="Self.FK_T_PRODUCT_RELATION_T_PRODUCT">
+      <End Role="T_PRODUCTS" EntitySet="T_PRODUCTS" />
+      <End Role="T_PRODUCT_RELATION" EntitySet="T_PRODUCT_RELATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_PRODUCTS_ATT_T_CATEGORIES_ATT" Association="Self.FK_T_PRODUCTS_ATT_T_CATEGORIES_ATT">
+      <End Role="T_CATEGORIES_ATT" EntitySet="T_CATEGORIES_ATT" />
+      <End Role="T_PRODUCTS_ATT" EntitySet="T_PRODUCTS_ATT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_PRODUCTS_ATT_T_PRODUCTS" Association="Self.FK_T_PRODUCTS_ATT_T_PRODUCTS">
+      <End Role="T_PRODUCTS" EntitySet="T_PRODUCTS" />
+      <End Role="T_PRODUCTS_ATT" EntitySet="T_PRODUCTS_ATT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_PRODUCTS_T_BRAND" Association="Self.FK_T_PRODUCTS_T_BRAND">
+      <End Role="T_BRAND" EntitySet="T_BRAND" />
+      <End Role="T_PRODUCTS" EntitySet="T_PRODUCTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_PRODUCTS_T_CATEGORIES" Association="Self.FK_T_PRODUCTS_T_CATEGORIES">
+      <End Role="T_CATEGORIES" EntitySet="T_CATEGORIES" />
+      <End Role="T_PRODUCTS" EntitySet="T_PRODUCTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_PRODUCTS_T_VENDOR" Association="Self.FK_T_PRODUCTS_T_VENDOR">
+      <End Role="T_VENDOR" EntitySet="T_VENDOR" />
+      <End Role="T_PRODUCTS" EntitySet="T_PRODUCTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_PROMOTION_CONDITION_T_PROMOTION" Association="Self.FK_T_PROMOTION_CONDITION_T_PROMOTION">
+      <End Role="T_PROMOTION" EntitySet="T_PROMOTION" />
+      <End Role="T_PROMOTION_CONDITION" EntitySet="T_PROMOTION_CONDITION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_ROLE_D_T_PROGRAM" Association="Self.FK_T_ROLE_D_T_PROGRAM">
+      <End Role="T_PROGRAM" EntitySet="T_PROGRAM" />
+      <End Role="T_ROLE_D" EntitySet="T_ROLE_D" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_USERS_T_ROLE" Association="Self.FK_T_USERS_T_ROLE">
+      <End Role="T_ROLE" EntitySet="T_ROLE" />
+      <End Role="T_USERS" EntitySet="T_USERS" />
+    </AssociationSet>
+    <AssociationSet Name="FKCUSTOMER" Association="Self.FKCUSTOMER">
+      <End Role="T_CUSTOMER_GROUP" EntitySet="T_CUSTOMER_GROUP" />
+      <End Role="T_CUSTOMER" EntitySet="T_CUSTOMER" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/_CateLayout.cshtml";
+}
+@foreach (var item in ViewBag.ALPHABETINDEX)
+{
+    <div class="catebox">
+        <section class="alphabet">
+            @item
+        </section>
+        <section class="categorywithalphabet">
+            @{
+    foreach (var items in ((jiffyOnline.Controllers.ItemController)this.ViewContext.Controller).getCategoryByPrefix(item))
+    {
+          <div class="scate"><a href="/Item/Categories/@items.ID">@items.NAME_EN.ToString().ToUpper()</a></div>
+    }
+
+            }
+          
+           
+        </section>
+        <div style="clear:both;"></div>
+    </div>
+
+}
